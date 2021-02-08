@@ -1,0 +1,141 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_SigGen_LPF" "verilogams"
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_SigGen_LPF ( VOUT_N, VOUT_P, VIN_N, VIN_P, bias_in, vdda, vssa, vsub , fc_sel);
+
+  input vsub;
+  input VIN_P;
+  input VIN_N;
+  output VOUT_P;
+  output VOUT_N;
+  input vdda;
+  input bias_in;
+  input vssa;
+  input [3:0] fc_sel;
+
+  electrical VOUT_N, VOUT_P, VIN_N, VIN_P, vssa;
+  logic [3:0] fc_sel;
+
+  //parameter real LPF_fc = 10 from (0:50];
+  real gm = 0.5u;  
+  real C1 = 26.42p;
+  real C2 = 14.76p;
+  real a1;
+  real a2;
+
+  initial begin
+	a1 = C1/gm;
+	a2 = (C1*C2)/(gm**2);
+  end
+
+  always@(fc_sel)
+  begin
+	case(fc_sel)
+		//LF
+		4'b1010:  begin
+			gm = 0.5u;
+			C1 = 26.42p;
+			C2 = 14.76p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b1001:	begin
+			gm = 0.5u;
+			C1 = 13.20p;
+			C2 = 7.37p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b1000:	begin
+			gm = 0.5u;
+			C1 = 6.61p;
+			C2 = 3.69p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b0111:	begin
+			gm = 0.5u;
+			C1 = 3.12p;
+			C2 = 1.74p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		//MF
+		4'b0110:	begin
+			gm = 5u;
+			C1 = 17.59p;
+			C2 = 9.82p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b0101:	begin
+			gm = 5u;
+			C1 = 8.49p;
+			C2 = 4.74p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b0100:	begin
+			gm = 5u;
+			C1 = 4.13p;
+			C2 = 2.30p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		//HF
+		4'b0011:	begin
+			gm = 50u;
+			C1 = 22.16p;
+			C2 = 12.37p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b0010:	begin
+			gm = 50u;
+			C1 = 11.09p;
+			C2 = 6.19p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b0001:	begin
+			gm = 50u;
+			C1 = 5.60p;
+			C2 = 3.13p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		4'b0000:	begin
+			gm = 50u;
+			C1 = 2.69p;
+			C2 = 1.50p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+
+		default:	begin
+			gm = 0.5u;
+			C1 = 26.42p;
+			C2 = 14.76p;
+			a1 = C1/gm;
+			a2 = (C1*C2)/(gm**2);
+			end
+		endcase
+  end  
+
+  analog begin
+     V(VOUT_P,VOUT_N) <+ laplace_nd(V(VIN_P,VIN_N),{1},{1,a1,a2});
+  end
+
+endmodule

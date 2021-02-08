@@ -1,0 +1,33 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_Processing_2" "verilogams"
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_Processing_2 ( VIN_P_I, VIN_N_I, VIN_P_Q, VIN_N_Q, re, im, mag, pha );
+
+	input VIN_P_I, VIN_N_I, VIN_P_Q, VIN_N_Q;
+	output re, im, mag, pha;
+
+	logic IQ_CTRL;
+	electrical VIN_P_I, VIN_N_I, VIN_P_Q, VIN_N_Q, re, im, mag, pha;
+
+	parameter real TCA_gain = 20u; // [I/V]
+	parameter real TIA_gain = 10M; // [V/I]
+	parameter real I_stim = 500u;
+
+	integer sel = 0; // sel = 0 for I path, sel = 1 for Q path
+	real re_buffer;
+	real im_buffer;
+
+	analog begin
+		
+		im_buffer = -(`M_PI/2) * (V(VIN_P_I,VIN_N_I) / (I_stim*TCA_gain*TIA_gain));
+		re_buffer = (`M_PI/2) * (V(VIN_P_Q,VIN_N_Q) / (I_stim*TCA_gain*TIA_gain));
+		V(re) <+ re_buffer;
+		V(im) <+ im_buffer;
+		V(mag) <+ sqrt(pow(V(re),2)+pow(V(im),2));
+		V(pha) <+ atan(V(im)/V(re))*(180.0/`M_PI);
+
+	end
+
+endmodule
