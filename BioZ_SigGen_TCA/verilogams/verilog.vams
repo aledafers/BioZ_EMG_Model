@@ -16,7 +16,7 @@ inout IoutN;
 input bias_in;
 input vssa;
 input vddd;
-output bias_CMFB;
+input bias_CMFB;
 
 logic G0;
 electrical VIN_N, VIN_P, VIN_N_n, VIN_P_n, IoutN, IoutP, vssa;
@@ -90,7 +90,7 @@ analog begin
 	V(VIN_P_n,VIN_N_n) <+ V(VIN_P,VIN_N) + noise_table("/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TCA_noise_table", "TCA_noise");
 
 	//Biasing for other stages	
-    I(bias_CMFB) <+ -I_bias_CMFB;
+//    I(bias_CMFB) <+ -I_bias_CMFB;
 
 end 
 

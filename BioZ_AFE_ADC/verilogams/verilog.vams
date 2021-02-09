@@ -1,88 +1,76 @@
-//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_ADC" "verilogams"
+//Verilog-AMS HDL for "EMG_Model", "ADC_EMG" "verilogams"
 
 `include "constants.vams"
 `include "disciplines.vams"
 
-module BioZ_AFE_ADC ( D, EOC, CLK, EN, START, VDD, VDDA, VIN, VREFH, VREFL, VSS, VSSA );
+module BioZ_AFE_ADC (Dout, EoC, Vinp, Vinn, En, Clk, Start, VrefH, VrefL, Vdda, Vssa, Vsub, Ibias, Vddd, Vssd);
 
-  input VDD;
-  input VIN;
-  input CLK;
-  input VREFH;
-  input EN;
-  input VSSA;
-  input VDDA;
-  input VREFL;
-  input START;
-  output EOC;
-  output  [9:0] D;
-  input VSS;
+//I/O ports declaration
+output Dout, EoC;
+input Vinp, Vinn, En, Clk, Start, VrefH, VrefL;
+inout Vdda, Vssa, Vsub, Ibias, Vddd, Vssd;
 
-  electrical VDD, VIN, VREFH, VSSA, VDDA, VREFL, VSS;
+//Define type of ports
+electrical Vdds, Vssa, Ibias, Vddd, Vssd;
+wreal VrefH, VrefL, Vinp, Vinn;
+logic En, Clk, Start;
+reg [11:0] Dout;
+reg EoC;
 
-  integer count;
-  real hold, fvalue, NaN;
+//internal varialbes
+integer count, end_count;
+real Vhold, fvalue, NaN; 
 
-  reg EOC;
-  reg [9:0] D;
+initial begin
+	EoC <= 1'b1;
+	count = 0;
+	Vhold = VrefL;
+	NaN = 0.0/0.0;
+	end_count = 14;
+end
 
-  initial begin
-     EOC <= 1'b1;
-     D <= 10'bx;
-     count = 0;
-     hold = V(VREFL,VSSA);
-     NaN = 0.0 / 0.0;
-  end
+always@(posedge Start) begin
+	if(count == 0) begin
+		count = 1;
+	end
+end
 
-  always @(posedge START) begin
-     if (count == 0) begin
-	count = 1;
-     end
-  end
-
-  always @(posedge CLK) begin
-     if (EN == 1'b0) begin
-        EOC <= 1'b1;
-        D <= 0;
-	count = 12;
-        hold = V(VREFL,VSSA);
-
-     end else begin
-	if (count > 0) begin
-	   if (count <= 12) begin
-               count <= count + 1;
-	   end else begin
-	       count <= 0;
-	   end
-
-	   if ((count < 3) && (START == 1'b0)) begin
-	      // Start pulse too short
-	      count <= 0;
-	   end else if (count == 2) begin
-	      // Sample input
-	      hold = V(VIN,VSSA);
-	   end else if (count == 3) begin
-	      // Set start of conversion signal
-	      EOC <= 1'b0;
-	   end else if (count == 12) begin
-	      if (hold == NaN) begin
-	         D <= 10'bx;
-	      end else if (V(VREFH,VSSA) == NaN) begin
-	         D <= 10'bx;
-	      end else if (hold > V(VREFH,VSSA)) begin
-		 D <= 10'd1023;
-	      end else if (V(VREFL,VSSA) == NaN) begin
-	         D <= 10'bx;
-	      end else if (hold < V(VREFL,VSSA)) begin
-		 D <= 10'd0;
-	      end else begin
-	         fvalue = 1024 * (hold - V(VREFL,VSSA)) / (V(VREFH,VREFL));
-	         D <= $rtoi(fvalue + 0.5);
-	      end
-	      EOC <= 1'b1;
-	   end
-	end        
-     end
-  end
+always@(posedge Clk) begin
+	if(En == 1'b0) begin
+		EoC <= 1'b0;
+		Dout <= 0;
+		Vhold = VrefL;
+	end else begin
+		if(count > 0) begin
+			if (count < end_count) begin
+				count = count + 1;
+			end else begin
+				count = 0;
+			end
+		end	
+		
+		if(count == 2) begin
+			Vhold = Vinp - Vinn; 						// sample the input
+		end else if (count == 3) begin
+			EoC <= 1'b0; 						// start conversion
+		end else if (count == end_count) begin 	// end of conversion
+			if(Vhold == NaN) begin
+				Dout <= 11'b0;
+			end else if (VrefH == NaN) begin
+				Dout <= 11'bx;
+			end else if (Vhold > VrefH) begin
+				Dout <= 12'd4095;
+			end else if (VrefL == NaN) begin
+				Dout <= 11'bx;
+			end else if (Vhold < VrefL) begin
+				Dout <= 11'b0;
+			end else begin
+				fvalue = 4096 * (Vhold - VrefL) / (VrefH-VrefL);
+				Dout <= $rtoi(fvalue + 0.5); 		// convet real number to int by truncation
+			end
+			EoC <= 1'b1;							// End of conversion
+		end
+	end
+end
 
 endmodule

@@ -3,16 +3,19 @@
 `include "constants.vams"
 `include "disciplines.vams"
 
-module BioZ_AFE_TIA ( voutn, voutp, Gain, Iinn, Iinp, bias_in, vdda, vssa, vsub );
+module BioZ_AFE_TIA ( voutn, voutp, Gain, Iinn, Iinp, bias_in, bias_CMFB, vdda, vddd, vssa, vssd, vsub );
 
 inout voutp;
 inout voutn;
 input vsub;
 inout Iinn;
 input vdda;
+input vddd;
 input bias_in;
+input bias_CMFB;
 inout Iinp;
 input vssa;
+input vssd;
 input Gain;
 
 logic Gain;
