@@ -4,7 +4,8 @@
 module BioZ_SigGen_ClkGen (
 	input enable,
 	input [3:0] Fsel,
-	output reg clk);
+	output reg clk_SigGen
+	output reg clk_ADC);
 
 	real FREQ = 31.25; // in kHz
 	parameter PHASE = 0; // in degrees
@@ -18,6 +19,18 @@ module BioZ_SigGen_ClkGen (
 
 	reg start_clk;
 
+	real FREQ_ADC = 1; // in kHz
+	parameter PHASE_ADC = 0; // in degrees
+	parameter DUTY_ADC = 50; // in percentage
+
+	real clk_pd_ADC; // convert to ns
+	real clk_on_ADC;
+	real clk_off_ADC;
+	real quarter_ADC;
+	real start_dly_ADC;
+
+	reg start_clk_ADC;
+
 	initial begin
 		clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 		clk_on =  DUTY/100.0 * clk_pd;
@@ -25,11 +38,20 @@ module BioZ_SigGen_ClkGen (
 		quarter = clk_pd/4;
 		start_dly = quarter * PHASE/90;
 
-		clk <= 0;
+		clk_pd_ADC = 1.0/(FREQ_ADC * 1e3) * 1e9; // convert to ns
+		clk_on_ADC =  DUTY_ADC/100.0 * clk_pd_ADC;
+		clk_off_ADC = (100.0 - DUTY_ADC)/100.0 * clk_pd_ADC;
+		quarter_ADC = clk_pd_ADC/4;
+		start_dly_ADC = quarter_ADC * PHASE_ADC/90;
+
+		clk_SigGen <= 0;
+		clk_ADC <= 0;
+
 		start_clk <= 0;
+		start_clk_ADC <= 0;
 	end
 
-	always @(Fsel,clk,FREQ) begin
+	always @(Fsel,clk_SigGen,FREQ) begin
 		case (Fsel)
 			4'b0000:	begin
 					FREQ = 32000;    //  32 MHz
@@ -161,7 +183,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			default:	begin
-					FREQ = 31.25 //   31.25 kHz
+					FREQ = 31.25; //   31.25 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -174,19 +196,32 @@ module BioZ_SigGen_ClkGen (
 	always @(posedge enable or negedge enable) begin
 		if(enable) begin
 			#(start_dly) start_clk = 1;
+			#(start_dly_ADC) start_clk_ADC = 1;
 		end else begin
 			#(start_dly) start_clk = 0;
+			#(start_dly_ADC) start_clk_ADC = 0;
 		end
 	end
 
 	always @(posedge start_clk) begin
 		if (start_clk) begin
-			clk = 1;
+			clk_SigGen = 1;
 			while (start_clk) begin
-				#(clk_on)  clk = 0;
-				#(clk_off) clk = 1;
+				#(clk_on)  clk_SigGen = 0;
+				#(clk_off) clk_SigGen = 1;
 			end
-			clk = 0;
+			clk_SigGen = 0;
+		end
+	end
+
+	always @(posedge start_clk_ADC) begin
+		if (start_clk_ADC) begin
+			clk_ADC = 1;
+			while (start_clk_ADC) begin
+				#(clk_on_ADC)  clk_ADC = 0;
+				#(clk_off_ADC) clk_ADC = 1;
+			end
+			clk_ADC = 0;
 		end
 	end
 
