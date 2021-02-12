@@ -1,6 +1,6 @@
 (amsTurboOpts analogInstValue) nil
 (amsTurboOpts analogSubcktValue) nil
-(amsTurboOpts apsplus) nil
+(amsTurboOpts apsplus) t
 (amsTurboOpts cktpreset) "None"
 (amsTurboOpts dcOPSolver) "APS"
 (amsTurboOpts digitalInstValue) nil
@@ -33,7 +33,7 @@
 (amsTurboOpts spectreXMtOption) "Auto"
 (amsTurboOpts spectreXNumThreads) ""
 (amsTurboOpts spectreXPreset) "MX"
-(amsTurboOpts uniMode) "Spectre"
+(amsTurboOpts uniMode) "APS"
 (amsTurboOpts uniModeSpectreX) "Spectre"
 (amsTurboOpts virtualGroundNodes) nil
 (amsTurboOpts virtualPowerNodeListBox) (nil choices nil value nil)

@@ -1,0 +1,24 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Wed Feb 10 14:13:04 2021 
+Best design point: 1
+Design specs: 
+	BioZ_EMG_Model:BioZ_TB:1	corner	Nominal - 
+	Zin_mag		Error	No
+	Zin_pha		Error	No
+	Vin_diff		Error	No
+	BioZ_OUT_I_DAC		Error	No
+	BioZ_OUT_Q_DAC		Error	No
+	Isource_trans		Error	No
+	real_spectrum		236.3u
+	imag_spectrum		-602.5u
+	mag_spectrum		647.2u
+	pha_spectrum		-68.59
+Design parameters: 
+	t_meas		49.5m
+
+Interactive.3
+Number of points completed: 1
+Number of simulation errors: 6
+Interactive.3 completed. 
+Current time: Wed Feb 10 14:29:13 2021 

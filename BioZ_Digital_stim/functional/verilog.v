@@ -16,20 +16,20 @@ reg [3:0] Fsel;
 
 
 initial begin
-	StepNum <= 0;
-	Gain_TCA_SigGen <= 1;
-	CountEnable <= 1;
-	Fsel <= freq_selection;
-	Resetn <= 1;
-	Clk_En <= 1;
+	StepNum = 0;
+	Gain_TCA_SigGen = 1;
+	CountEnable = 1;
+	Fsel = freq_selection;
+	Resetn = 1;
+	Clk_En = 1;
 
-	G_CTRL_TCA_AFE <= 1;
-	G_CTRL_TIA_AFE <= 1;
-	ADC_En <= 1;
-	ADC_Start <= 1;
+	G_CTRL_TCA_AFE = 1;
+	G_CTRL_TIA_AFE = 1;
+	ADC_En = 1;
+	ADC_Start = 1;
 
-	#200 Resetn <= 0; Clk_En <= 0; ADC_En <= 0; ADC_Start <= 0;
-	#400 Resetn <= 1; Clk_En <= 1; ADC_En <= 1; ADC_Start <= 1;
+	#200 Resetn = 0; Clk_En = 0; ADC_En = 0; ADC_Start = 0;
+	#400 Resetn = 1; Clk_En = 1; ADC_En = 1; ADC_Start = 1;
 end 
 
 always begin

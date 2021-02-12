@@ -1,10 +1,10 @@
 //Verilog HDL for "BioZ_EMG_Model", "BioZ_Digital_stim" "functional"
 
 
-module BioZ_Digital_stim (Fsel,StepNum,Gain_TCA_SigGen,CountEnable,Resetn,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start);
+module BioZ_Digital_stim (Fsel,StepNum,Gain_TCA_SigGen,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start);
 
 output [3:0] Fsel;
-output StepNum,Gain_TCA,CountEnable,Resetn;
+output StepNum,Gain_TCA_SigGen,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start;
 
 //parameter cycle = 1428; // 700 kHz
 parameter cycle = 4500000; // 4.5 ms
@@ -16,19 +16,20 @@ reg [3:0] Fsel;
 
 
 initial begin
-	StepNum <= 0;
-	Gain_TCA_SigGen <= 1;
-	CountEnable <= 1;
-	Fsel <= freq_selection;
-	Resetn <= 1;
+	StepNum = 0;
+	Gain_TCA_SigGen = 1;
+	CountEnable = 1;
+	Fsel = freq_selection;
+	Resetn = 1;
+	Clk_En = 1;
 
-	G_CTRL_TCA_AFE <= 1;
-	G_CTRL_TIA_AFE <= 1;
-	ADC_En <= 1;
-	ADC_Start <= 1;
+	G_CTRL_TCA_AFE = 1;
+	G_CTRL_TIA_AFE = 1;
+	ADC_En = 1;
+	ADC_Start = 1;
 
-	#200 Resetn <= 0; Clk_En <= 0; ADC_En <= 0;
-	#400 Resetn <= 1; Clk_En <= 1; ADC_En <= 1;
+//	#200 Resetn = 0; Clk_En = 0; ADC_En = 0; ADC_Start = 0;
+//	#400 Resetn = 1; Clk_En = 1; ADC_En = 1; ADC_Start = 1;
 end 
 
 always begin

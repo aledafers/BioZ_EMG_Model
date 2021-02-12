@@ -13,7 +13,7 @@ module BioZ_AFE_Processing_2 ( VIN_P_I, VIN_N_I, VIN_P_Q, VIN_N_Q, re, im, mag, 
 
 	parameter real TCA_gain = 20u; // [I/V]
 	parameter real TIA_gain = 10M; // [V/I]
-	parameter real I_stim = 500u;
+	parameter real I_stim = 300u;
 
 	integer sel = 0; // sel = 0 for I path, sel = 1 for Q path
 	real re_buffer;
@@ -21,8 +21,8 @@ module BioZ_AFE_Processing_2 ( VIN_P_I, VIN_N_I, VIN_P_Q, VIN_N_Q, re, im, mag, 
 
 	analog begin
 		
-		im_buffer = -(`M_PI/2) * (V(VIN_P_I,VIN_N_I) / (I_stim*TCA_gain*TIA_gain));
-		re_buffer = (`M_PI/2) * (V(VIN_P_Q,VIN_N_Q) / (I_stim*TCA_gain*TIA_gain));
+		re_buffer = -(`M_PI/2) * (V(VIN_P_I,VIN_N_I) / (I_stim*TCA_gain*TIA_gain));
+		im_buffer = (`M_PI/2) * (V(VIN_P_Q,VIN_N_Q) / (I_stim*TCA_gain*TIA_gain));
 		V(re) <+ re_buffer;
 		V(im) <+ im_buffer;
 		V(mag) <+ sqrt(pow(V(re),2)+pow(V(im),2));
