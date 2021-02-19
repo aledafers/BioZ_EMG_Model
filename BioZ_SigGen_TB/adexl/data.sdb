@@ -56,17 +56,34 @@
 						<value>ams_state1</value>
 					</option>
 				</origoptions>
+				<outputs>
+					<output>"/I19/IoutP"
+						<evalType>point</evalType>
+					</output>
+					<output>"/I19/IoutN"
+						<evalType>point</evalType>
+					</output>
+					<output>Iout_TCA_trans
+						<evalType>point</evalType>
+					</output>
+					<output>/I19/IoutP
+						<evalType>point</evalType>
+					</output>
+					<output>/I19/IoutN
+						<evalType>point</evalType>
+					</output>
+				</outputs>
 			</test>
 		</tests>
 		<vars>
 			<var>t_meas
-				<value>49.5m</value>
+				<value>4.5m</value>
 				<dependentTests>
 					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 				</dependentTests>
 			</var>
 			<var>Ibias
-				<value>5u</value>
+				<value>10u</value>
 				<dependentTests>
 					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 				</dependentTests>
@@ -98,7 +115,7 @@
 		</plottingoptions>
 	</active>
 	<history>History
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.45
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.55
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -132,241 +149,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.45</value>
-							</option>
-						</tooloptions>
-						<origoptions>
-							<option>cell
-								<value>BioZ_SigGen_TB</value>
-							</option>
-							<option>lib
-								<value>BioZ_EMG_Model</value>
-							</option>
-							<option>sim
-								<value>ams</value>
-							</option>
-							<option>view
-								<value>config</value>
-							</option>
-							<option>path
-								<value>$AXL_SETUPDB_DIR/test_states</value>
-							</option>
-							<option>state
-								<value>ams_state1</value>
-							</option>
-						</origoptions>
-					</test>
-				</tests>
-				<vars>
-					<var>t_meas
-						<value>4.95m</value>
-						<dependentTests>
-							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
-						</dependentTests>
-					</var>
-					<var>Ibias
-						<value>5u</value>
-						<dependentTests>
-							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
-						</dependentTests>
-					</var>
-				</vars>
-				<overwritehistoryname>Interactive.0</overwritehistoryname>
-				<plottingoptions>
-					<plottingoption>plottingmode
-						<value>Replace</value>
-					</plottingoption>
-					<plottingoption>plottype
-						<value>None</value>
-					</plottingoption>
-					<plottingoption>usewaveformtemplate
-						<value>no</value>
-					</plottingoption>
-					<plottingoption>useMaestroPlottingTemplate
-						<value>yes</value>
-					</plottingoption>
-					<plottingoption>waveformtemplate
-						<value></value>
-					</plottingoption>
-					<plottingoption>allplottingtemplates
-						<value></value>
-					</plottingoption>
-					<plottingoption>defaultplottingtemplate
-						<value></value>
-					</plottingoption>
-				</plottingoptions>
-				<sortVariableValues>0</sortVariableValues>
-			</checkpoint>
-			<timestamp>Feb 8 19:51:29 2021</timestamp>
-			<uuid>{4b68fb83-e19b-4454-8724-c5385fbfae8f}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.45.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.45.rdb</simresults>
-			<rawdatadelstrategy>SaveAll
-				<simdatasavemode>All</simdatasavemode>
-			</rawdatadelstrategy>
-			<netlistdelstrategy>SaveAll</netlistdelstrategy>
-			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_195129738</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.45</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.45</simdir>
-			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.45.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.45.log</runlogfile>
-			<schematicpoint></schematicpoint>
-			<test>all</test>
-		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.46
-			<checkpoint>
-				<corners>
-					<corner enabled="1">_default</corner>
-				</corners>
-				<extensions>
-					<extension>Parasitics
-						<callback>_parSetupDBExtensionCB</callback>
-						<iconvalue></iconvalue>
-						<icontype></icontype>
-					</extension>
-				</extensions>
-				<currentmode>Single Run, Sweeps and Corners</currentmode>
-				<overwritehistory>0</overwritehistory>
-				<tests>
-					<test>BioZ_EMG_Model:BioZ_SigGen_TB:1
-						<tool>ADE</tool>
-						<tooloptions>
-							<option>cell
-								<value>BioZ_SigGen_TB</value>
-							</option>
-							<option>lib
-								<value>BioZ_EMG_Model</value>
-							</option>
-							<option>sim
-								<value>ams</value>
-							</option>
-							<option>view
-								<value>config</value>
-							</option>
-							<option>path
-								<value>$AXL_SETUPDB_DIR/test_states</value>
-							</option>
-							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.46</value>
-							</option>
-						</tooloptions>
-						<origoptions>
-							<option>cell
-								<value>BioZ_SigGen_TB</value>
-							</option>
-							<option>lib
-								<value>BioZ_EMG_Model</value>
-							</option>
-							<option>sim
-								<value>ams</value>
-							</option>
-							<option>view
-								<value>config</value>
-							</option>
-							<option>path
-								<value>$AXL_SETUPDB_DIR/test_states</value>
-							</option>
-							<option>state
-								<value>ams_state1</value>
-							</option>
-						</origoptions>
-					</test>
-				</tests>
-				<vars>
-					<var>t_meas
-						<value>4.95m</value>
-						<dependentTests>
-							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
-						</dependentTests>
-					</var>
-					<var>Ibias
-						<value>5u</value>
-						<dependentTests>
-							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
-						</dependentTests>
-					</var>
-				</vars>
-				<overwritehistoryname>Interactive.0</overwritehistoryname>
-				<plottingoptions>
-					<plottingoption>plottingmode
-						<value>Replace</value>
-					</plottingoption>
-					<plottingoption>plottype
-						<value>None</value>
-					</plottingoption>
-					<plottingoption>usewaveformtemplate
-						<value>no</value>
-					</plottingoption>
-					<plottingoption>useMaestroPlottingTemplate
-						<value>yes</value>
-					</plottingoption>
-					<plottingoption>waveformtemplate
-						<value></value>
-					</plottingoption>
-					<plottingoption>allplottingtemplates
-						<value></value>
-					</plottingoption>
-					<plottingoption>defaultplottingtemplate
-						<value></value>
-					</plottingoption>
-				</plottingoptions>
-				<sortVariableValues>0</sortVariableValues>
-			</checkpoint>
-			<timestamp>Feb 8 20:05:09 2021</timestamp>
-			<uuid>{25816a4e-a722-4d26-9d4d-d0decabdf95f}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.46.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.46.rdb</simresults>
-			<rawdatadelstrategy>SaveAll
-				<simdatasavemode>All</simdatasavemode>
-			</rawdatadelstrategy>
-			<netlistdelstrategy>SaveAll</netlistdelstrategy>
-			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_200509529</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.46</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.46</simdir>
-			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.46.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.46.log</runlogfile>
-			<schematicpoint></schematicpoint>
-			<test>all</test>
-		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.47
-			<checkpoint>
-				<corners>
-					<corner enabled="1">_default</corner>
-				</corners>
-				<extensions>
-					<extension>Parasitics
-						<callback>_parSetupDBExtensionCB</callback>
-						<iconvalue></iconvalue>
-						<icontype></icontype>
-					</extension>
-				</extensions>
-				<currentmode>Single Run, Sweeps and Corners</currentmode>
-				<overwritehistory>0</overwritehistory>
-				<tests>
-					<test>BioZ_EMG_Model:BioZ_SigGen_TB:1
-						<tool>ADE</tool>
-						<tooloptions>
-							<option>cell
-								<value>BioZ_SigGen_TB</value>
-							</option>
-							<option>lib
-								<value>BioZ_EMG_Model</value>
-							</option>
-							<option>sim
-								<value>ams</value>
-							</option>
-							<option>view
-								<value>config</value>
-							</option>
-							<option>path
-								<value>$AXL_SETUPDB_DIR/test_states</value>
-							</option>
-							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.47</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.55</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -431,25 +214,25 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 8 20:22:22 2021</timestamp>
-			<uuid>{0288f55c-c259-4b72-9a78-187dee07c8f1}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.47.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.47.rdb</simresults>
+			<timestamp>Feb 16 14:44:25 2021</timestamp>
+			<uuid>{e648443b-9e26-4a94-849d-40d7b8e57383}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.55.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.55.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_202222595</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.47</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.47</simdir>
+			<localpsfdir>/tmp/s2424_fernande_144425731</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.55</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.55</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.47.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.47.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.55.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.55.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.48
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.56
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -483,7 +266,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.48</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.56</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -548,25 +331,25 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 8 20:26:10 2021</timestamp>
-			<uuid>{b256b4df-a4a4-4976-a39f-70bf1d506a69}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.48.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.48.rdb</simresults>
+			<timestamp>Feb 16 14:54:55 2021</timestamp>
+			<uuid>{b3331332-68de-44a7-89cd-b5f27af5410d}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.56.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.56.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_202610900</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.48</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.48</simdir>
+			<localpsfdir>/tmp/s2424_fernande_145455476</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.56</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.56</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.48.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.48.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.56.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.56.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.49
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.57
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -600,7 +383,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.49</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.57</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -665,25 +448,25 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 8 20:28:37 2021</timestamp>
-			<uuid>{0634b771-d8ea-4c97-8bde-0f800c3ec565}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.49.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.49.rdb</simresults>
+			<timestamp>Feb 16 14:56:12 2021</timestamp>
+			<uuid>{8a25de20-9801-4e82-acbe-092d3ac986d8}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.57.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.57.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_202837496</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.49</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.49</simdir>
+			<localpsfdir>/tmp/s2424_fernande_145612844</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.57</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.57</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.49.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.49.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.57.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.57.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.50
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.58
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -717,7 +500,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.50</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.58</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -750,7 +533,7 @@
 						</dependentTests>
 					</var>
 					<var>Ibias
-						<value>5u</value>
+						<value>10u</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
@@ -782,25 +565,25 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 8 20:30:08 2021</timestamp>
-			<uuid>{75db2fe3-effb-4ba8-b568-218836d53c8e}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.50.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.50.rdb</simresults>
+			<timestamp>Feb 16 15:03:00 2021</timestamp>
+			<uuid>{b0e1a83a-2563-4546-acf2-27a15a6600d8}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.58.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.58.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_203008064</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.50</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.50</simdir>
+			<localpsfdir>/tmp/s2424_fernande_150300501</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.58</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.58</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.50.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.50.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.58.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.58.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.51
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.59
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -834,7 +617,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.51</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.59</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -857,17 +640,28 @@
 								<value>ams_state1</value>
 							</option>
 						</origoptions>
+						<outputs>
+							<output>/I33/IoutP
+								<evalType>point</evalType>
+							</output>
+							<output>/I33/IoutN
+								<evalType>point</evalType>
+							</output>
+							<output>Iout_TCA_trans
+								<evalType>point</evalType>
+							</output>
+						</outputs>
 					</test>
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>49.5m</value>
+						<value>4.5m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
 					</var>
 					<var>Ibias
-						<value>5u</value>
+						<value>10u</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
@@ -899,25 +693,25 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 8 20:36:35 2021</timestamp>
-			<uuid>{ed883b69-92ed-44fb-aea9-ffc04a339d77}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.51.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.51.rdb</simresults>
+			<timestamp>Feb 16 15:05:20 2021</timestamp>
+			<uuid>{5a41bae9-bc39-4292-a46d-e9e98e871e6f}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.59.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.59.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_203635651</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.51</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.51</simdir>
+			<localpsfdir>/tmp/s2424_fernande_150520482</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.59</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.59</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.51.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.51.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.59.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.59.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.52
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.60
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -951,7 +745,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.52</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.60</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -974,17 +768,28 @@
 								<value>ams_state1</value>
 							</option>
 						</origoptions>
+						<outputs>
+							<output>/I33/IoutP
+								<evalType>point</evalType>
+							</output>
+							<output>/I33/IoutN
+								<evalType>point</evalType>
+							</output>
+							<output>Iout_TCA_trans
+								<evalType>point</evalType>
+							</output>
+						</outputs>
 					</test>
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>49.5m</value>
+						<value>4.5m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
 					</var>
 					<var>Ibias
-						<value>5u</value>
+						<value>10u</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
@@ -1016,25 +821,25 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 10 12:35:10 2021</timestamp>
-			<uuid>{998799d6-58f6-4526-91ee-f1889629b182}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.52.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.52.rdb</simresults>
+			<timestamp>Feb 16 15:06:54 2021</timestamp>
+			<uuid>{e31a7898-c74e-46e1-b650-9e8079d2f201}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.60.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.60.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_123510675</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.52</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.52</simdir>
+			<localpsfdir>/tmp/s2424_fernande_150654551</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.60</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.60</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.52.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.52.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.60.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.60.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.53
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.61
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -1068,7 +873,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.53</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.61</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1091,17 +896,28 @@
 								<value>ams_state1</value>
 							</option>
 						</origoptions>
+						<outputs>
+							<output>/I33/IoutP
+								<evalType>point</evalType>
+							</output>
+							<output>/I33/IoutN
+								<evalType>point</evalType>
+							</output>
+							<output>Iout_TCA_trans
+								<evalType>point</evalType>
+							</output>
+						</outputs>
 					</test>
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>49.5m</value>
+						<value>4.5m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
 					</var>
 					<var>Ibias
-						<value>5u</value>
+						<value>10u</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
@@ -1133,25 +949,25 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 10 12:37:06 2021</timestamp>
-			<uuid>{038cc60d-6656-4f0b-bc8d-0d25c7e6e046}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.53.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.53.rdb</simresults>
+			<timestamp>Feb 16 15:09:50 2021</timestamp>
+			<uuid>{be7f0e0c-d98a-401a-9488-2c74b2b011d1}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.61.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.61.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_123706350</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.53</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.53</simdir>
+			<localpsfdir>/tmp/s2424_fernande_150950516</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.61</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.61</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.53.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.53.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.61.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.61.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.54
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.62
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -1185,7 +1001,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.54</value>
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.62</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1208,17 +1024,28 @@
 								<value>ams_state1</value>
 							</option>
 						</origoptions>
+						<outputs>
+							<output>/I33/IoutP
+								<evalType>point</evalType>
+							</output>
+							<output>/I33/IoutN
+								<evalType>point</evalType>
+							</output>
+							<output>Iout_TCA_trans
+								<evalType>point</evalType>
+							</output>
+						</outputs>
 					</test>
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>49.5m</value>
+						<value>4.5m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
 					</var>
 					<var>Ibias
-						<value>5u</value>
+						<value>10u</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
 						</dependentTests>
@@ -1250,21 +1077,289 @@
 				</plottingoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 10 12:47:57 2021</timestamp>
-			<uuid>{12bfe129-3c67-4dfb-9a42-21c86b38b15d}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.54.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.54.rdb</simresults>
+			<timestamp>Feb 16 15:16:31 2021</timestamp>
+			<uuid>{d251f23b-6b73-4e32-9f1a-ac6330dc3861}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.62.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.62.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_124757272</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.54</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.54</simdir>
+			<localpsfdir>/tmp/s2424_fernande_151631757</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.62</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.62</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.54.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.54.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.62.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.62.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.63
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_SigGen_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_SigGen_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.63</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_SigGen_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>"/I19/IoutP"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I19/IoutN"
+								<evalType>point</evalType>
+							</output>
+							<output>Iout_TCA_trans
+								<evalType>point</evalType>
+							</output>
+							<output>/I19/IoutP
+								<evalType>point</evalType>
+							</output>
+							<output>/I19/IoutN
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_meas
+						<value>4.5m</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ibias
+						<value>10u</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>Replace</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Feb 16 15:28:42 2021</timestamp>
+			<uuid>{ce3309fa-79bb-4b6f-b69a-b86bc6796a49}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.63.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.63.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_152842615</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.63</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.63</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.63.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.63.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.64
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_SigGen_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_SigGen_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_SigGen_TB:1_ams_state1_Interactive.64</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_SigGen_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>"/I19/IoutP"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I19/IoutN"
+								<evalType>point</evalType>
+							</output>
+							<output>Iout_TCA_trans
+								<evalType>point</evalType>
+							</output>
+							<output>/I19/IoutP
+								<evalType>point</evalType>
+							</output>
+							<output>/I19/IoutN
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_meas
+						<value>4.5m</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ibias
+						<value>10u</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_SigGen_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>Replace</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Feb 17 18:51:51 2021</timestamp>
+			<uuid>{d9191a7d-ce96-4377-9531-9f9e6327a1b8}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.64.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.64.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_185151834</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.64</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.64</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_SigGen_TB/adexl/results/data/Interactive.64.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.64.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>

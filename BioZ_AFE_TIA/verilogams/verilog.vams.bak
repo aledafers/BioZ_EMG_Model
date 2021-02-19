@@ -3,7 +3,7 @@
 `include "constants.vams"
 `include "disciplines.vams"
 
-module BioZ_AFE_TIA ( voutn, voutp, Gain, Iinn, Iinp, bias_in, vdda, vddd, vssa, vssd, vsub );
+module BioZ_AFE_TIA ( voutn, voutp, Gain, Iinn, Iinp, bias_in, bias_CMFB, vdda, vddd, vssa, vssd, vsub );
 
 inout voutp;
 inout voutn;
@@ -12,6 +12,7 @@ inout Iinn;
 input vdda;
 input vddd;
 input bias_in;
+input bias_CMFB;
 inout Iinp;
 input vssa;
 input vssd;
@@ -20,7 +21,7 @@ input Gain;
 logic Gain;
 electrical voutn, voutp, Iinn, Iinp, vssa;
 
-parameter real fc = 1k from (0:1k];
+parameter real fc = 1k from (0:1M];
 parameter real vcm = 0.9 ;
 parameter real Av = 10000; //DC voltage Gain 
 parameter real ip3 = -99.6;// 3rd order intercept point in dBm
@@ -36,7 +37,7 @@ always @(Gain)
 begin
 	if (Gain == 0) begin // Low Gain, RF = 3M
  		RF = 3.33333e6;
-	end else begin // High Gain RF = 1M
+	end else begin // High Gain RF = 10M
 		RF = 10e6;
 	end
 end

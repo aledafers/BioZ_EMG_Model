@@ -4,7 +4,7 @@
 module BioZ_SigGen_ClkGen (
 	input enable,
 	input [3:0] Fsel,
-	output reg clk_SigGen
+	output reg clk_SigGen,
 	output reg clk_ADC);
 
 	real FREQ = 31.25; // in kHz
@@ -19,7 +19,7 @@ module BioZ_SigGen_ClkGen (
 
 	reg start_clk;
 
-	real FREQ_ADC = 1; // in kHz
+	real FREQ_ADC = 1 * 15; // in kHz
 	parameter PHASE_ADC = 0; // in degrees
 	parameter DUTY_ADC = 50; // in percentage
 

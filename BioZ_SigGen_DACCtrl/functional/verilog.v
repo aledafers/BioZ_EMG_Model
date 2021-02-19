@@ -156,10 +156,8 @@ always @(StepNum,count)
 begin
     if(StepNum == 0) begin // 32 Steps
         IP <= ~count[4];
-       
     end else begin // 16 steps
         IP <= ~count[3];
-      
     end
 end
 

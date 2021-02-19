@@ -16,10 +16,15 @@ module BioZ_AFE_LPF ( VOUT_N, VOUT_P, VIN_N, VIN_P, bias_in, vdda, vssa, vsub );
 
   electrical VOUT_N, VOUT_P, VIN_N, VIN_P, vssa;
 
-  parameter real LPF_fc = 10 from (0:50];
+  parameter real gm_1 = 0.1u;
+  parameter real C1_1 = 85.19p;
+  parameter real C2_1 = 47.57p;
+  parameter real a1_1 = C1_1/gm_1;
+  parameter real a2_1 = (C1_1*C2_1)/(gm_1**2);
 
   analog begin
-     V(VOUT_P,VOUT_N)<+ laplace_np(V(VIN_P,VIN_N),'{1},'{-`M_TWO_PI*LPF_fc,0});
+     V(VOUT_P,vssa)<+ laplace_nd(V(VIN_P,vssa) + vcm,{1},{1,a1_1,a2_1});
+     V(VOUT_N,vssa)<+ laplace_nd(V(VIN_N,vssa) + vcm,{1},{1,a1_1,a2_1});
   end
 
 endmodule
