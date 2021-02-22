@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      fernande
+HostName                       s2424.it.kth.se
+ProcessIdentifier              27960
+ProcessCreationTime_UTC        1613729701
+ProcessCreationTime_Readable   Fri Feb 19 11:15:01 2021 CET
+AppIdentifier                  /pkg/cadence/installs/IC618/tools/dfII/bin/64bit/virtuoso
+OSType                         lnx86
+ReasonForPlacingEditLock       
+FilePathUsedToEditLock         /home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/data.sdb
+TimeEditLocked                 Fri Feb 19 16:01:03 2021 CET

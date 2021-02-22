@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      fernande
+HostName                       s2424.it.kth.se
+ProcessIdentifier              27960
+ProcessCreationTime_UTC        1613729701
+ProcessCreationTime_Readable   Fri Feb 19 11:15:01 2021 CET
+AppIdentifier                  /pkg/cadence/installs/IC618/tools/dfII/bin/64bit/virtuoso
+OSType                         lnx86
+ReasonForPlacingEditLock       Text Edit
+FilePathUsedToEditLock         /home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_Digital_stim/functional/verilog.v
+TimeEditLocked                 Fri Feb 19 16:26:24 2021 CET

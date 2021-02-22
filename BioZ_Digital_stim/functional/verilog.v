@@ -1,11 +1,12 @@
 //Verilog HDL for "BioZ_EMG_Model", "BioZ_Digital_stim" "functional"
 
 
-module BioZ_Digital_stim (Fsel,StepNum,Gain_TCA_SigGen,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start,Dir,Row,Col,clk_ADC);
+module BioZ_Digital_stim (Fsel,StepNum,Gain_TCA_SigGen,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start,Dir,Row,Col,SenseMode,clk_ADC);
 
 input clk_ADC;
 output [3:0] Fsel;
 output [1:0] Row, Col, Gain_TCA_SigGen;
+output [2:0] SenseMode;
 output StepNum,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start,Dir;
 
 //parameter cycle = 1428; // 700 kHz
@@ -17,6 +18,7 @@ parameter ADC_clk_cycle = 14; // ADC takes 15 clock cycles to convert
 reg StepNum,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start,Dir;
 reg [3:0] Fsel;
 reg [1:0] Row, Col, Gain_TCA_SigGen;
+reg [2:0] SenseMode;
 
 integer cnt_conv;
 
@@ -37,6 +39,7 @@ initial begin
 	Dir = 1;
 	Row = 2'b00;
 	Col = 2'b00;
+	SenseMode = 3'b000;
 
 	#200 Resetn = 0; Clk_En = 0; ADC_En = 0;
 	#400 Resetn = 1; Clk_En = 1; ADC_En = 1;

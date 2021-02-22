@@ -19,7 +19,8 @@ reg EoC;
 
 //internal varialbes
 integer count, end_count;
-real Vhold, fvalue, NaN; 
+real Vhold, fvalue, NaN;
+parameter real vcm = 0.9; 
 
 initial begin
 	EoC <= 1'b1;
@@ -50,7 +51,7 @@ always@(posedge Clk) begin
 		end	
 		
 		if(count == 2) begin
-			Vhold = Vinp - Vinn; 						// sample the input
+			Vhold = Vinp - Vinn + vcm; 						// sample the input
 		end else if (count == 3) begin
 			EoC <= 1'b0; 						// start conversion
 		end else if (count == end_count) begin 	// end of conversion
