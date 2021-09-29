@@ -4,9 +4,16 @@
 module BioZ_SigGen_DACCtrl (
 CountEnable,
 Clk,
+Clk_IF,
 Resetn,
 StepNum,
 P,
+clk_IF_P,
+clk_IF_N,
+clk_merged_IP,
+clk_merged_IN,
+clk_merged_QP,
+clk_merged_QN,
 IP,
 IN,
 QP,
@@ -17,6 +24,7 @@ QN
 //Inputs
 input CountEnable;
 input Clk;
+input Clk_IF;
 input Resetn;
 input StepNum;
 
@@ -27,14 +35,18 @@ output reg [16:0] P; //Control signals for the DAC
 output reg IP; // in-phase (I) reference clock
 output reg QP; // quadrature (Q) reference clock
 //output wire QP; // quadrature (Q) reference clock
-output wire IN,QN; 
+output wire IN,QN,clk_merged_IP,clk_merged_IN, clk_merged_QP,clk_merged_QN; 
 
 reg [16:0] S32;
 reg [16:0] S16;
 
 reg [4:0] count;
+reg [4:0] count_IF;
 
 reg aux_Q;
+
+output reg clk_IF_P; // IF reference clock
+output wire clk_IF_N;
 
 // 5bit counter state machine
 always @(posedge Clk, negedge Resetn)
@@ -43,6 +55,15 @@ begin
         count <= 0;
     end else begin
         count <= count + 1;    
+    end    
+end
+
+always @(posedge Clk_IF, negedge Resetn)
+begin
+    if (Resetn == 0) begin
+        count_IF <= 0;
+    end else begin
+        count_IF <= count_IF + 1;    
     end    
 end
 
@@ -150,6 +171,20 @@ begin
     
 end
 
+// clk_bioz Outputs
+
+
+always @(StepNum,count_IF)
+begin
+    if(StepNum == 0) begin // 32 Steps
+        clk_IF_P <= ~count_IF[4];
+    end else begin // 16 steps
+        clk_IF_P <= ~count_IF[3];
+    end
+end
+
+assign clk_IF_N = ~clk_IF_P;
+
 // I/Q Outputs
 
 always @(StepNum,count)
@@ -185,5 +220,12 @@ begin
 end
 
 assign QN = ~QP;
+
+// clk_merged Outputs
+
+assign clk_merged_IP = IP~^clk_IF_P;
+assign clk_merged_IN = ~clk_merged_IP;
+assign clk_merged_QP = QP~^clk_IF_P;
+assign clk_merged_QN = ~clk_merged_QP;
 
 endmodule

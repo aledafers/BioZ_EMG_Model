@@ -1,0 +1,4407 @@
+<?xml version="1.0"?>
+<setupdb version="6">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+					</option>
+					<option>lib
+						<value>BioZ_EMG_Model</value>
+					</option>
+					<option>sim
+						<value>ams</value>
+					</option>
+					<option>view
+						<value>config</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>BioZ_AFE_CTBPSDM_TB</value>
+					</option>
+					<option>lib
+						<value>BioZ_EMG_Model</value>
+					</option>
+					<option>sim
+						<value>ams</value>
+					</option>
+					<option>view
+						<value>config</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>ams_state1</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>VT("")
+						<evalType>point</evalType>
+					</output>
+					<output>SDM_in
+						<evalType>point</evalType>
+					</output>
+					<output>res1
+						<evalType>point</evalType>
+					</output>
+					<output>res2
+						<evalType>point</evalType>
+					</output>
+					<output>SDM_out
+						<evalType>point</evalType>
+					</output>
+					<output>vdac
+						<evalType>point</evalType>
+					</output>
+					<output>/sum1p
+						<evalType>point</evalType>
+					</output>
+					<output>/sum1n
+						<evalType>point</evalType>
+					</output>
+					<output>sum1
+						<evalType>point</evalType>
+					</output>
+					<output>/compp
+						<evalType>point</evalType>
+					</output>
+					<output>/compn
+						<evalType>point</evalType>
+					</output>
+					<output>(VT("/sum1p") - VT("/sum1n"))
+						<evalType>point</evalType>
+					</output>
+					<output>comp
+						<evalType>point</evalType>
+					</output>
+					<output>res3
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+		</tests>
+		<vars>
+			<var>t_trans
+				<value>2m</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>pi
+				<value>3.1416</value>
+			</var>
+			<var>Voh
+				<value>1.8</value>
+			</var>
+			<var>vcm
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var enabled="1">vpk
+				<value>0.8</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>fs
+				<value>62.5k</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>f0
+				<value>fs/4</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>fB
+				<value>fs/(2*256)</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>a1
+				<value>1.0669</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>a2
+				<value>0.9777</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>a3
+				<value>1.3350</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>b1
+				<value>0.4891</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>c1
+				<value>0.4891</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>c2
+				<value>0.2660</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>c3
+				<value>0.0794</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Cf
+				<value>30p</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Av1_dB
+				<value>75</value>
+			</var>
+			<var>Av2_dB
+				<value>75</value>
+			</var>
+			<var>Av3_dB
+				<value>75</value>
+			</var>
+			<var>Av1
+				<value>10**(Av1_dB/20)</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Av2
+				<value>10**(Av2_dB/20)</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Av3
+				<value>10**(Av3_dB/20)</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>BW1
+				<value>fs</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>BW2
+				<value>fs</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>BW3
+				<value>fs</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>GBW1
+				<value>Av1*BW1</value>
+			</var>
+			<var>GBW2
+				<value>Av2*BW2</value>
+			</var>
+			<var>GBW3
+				<value>Av3*BW3</value>
+			</var>
+			<var>SR1
+				<value>2*pi*GBW1*Voh</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>SR2
+				<value>2*pi*GBW2*Voh</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>SR3
+				<value>2*pi*GBW3*Voh</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tr
+				<value>20n</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tf
+				<value>20n</value>
+				<dependentTests>
+					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Rdc
+				<value>300</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Rac
+				<value>100</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Ron
+				<value>140</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Roff
+				<value>500M</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Voffp_comp
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Voffn_comp
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>tdelay_comp
+				<value>0</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>BW
+				<value>fs</value>
+				<dependentTests>
+					<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottingmode
+				<value>New Win</value>
+			</plottingoption>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>useMaestroPlottingTemplate
+				<value>yes</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+			<plottingoption>allplottingtemplates
+				<value></value>
+			</plottingoption>
+			<plottingoption>defaultplottingtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+		<jobpolicyname>ADE XL Default</jobpolicyname>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.932
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.932</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:38:18 2021</timestamp>
+			<uuid>{4ac1e436-a433-413a-adb0-b5e46d8ce63a}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.932.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.932.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_193818186</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.932</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.932</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.932.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.932.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.933
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.933</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:39:38 2021</timestamp>
+			<uuid>{cdf4fd0f-c9bb-43ab-89dc-13600d11f9d8}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.933.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.933.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_193938445</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.933</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.933</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.933.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.933.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.934
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.934</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:41:02 2021</timestamp>
+			<uuid>{5d8c5aac-cc80-4e93-8cd4-a14d67e1f138}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.934.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.934.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_194102989</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.934</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.934</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.934.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.934.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.935
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.935</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:42:30 2021</timestamp>
+			<uuid>{f96230cb-6fed-4c88-874d-d6293ef5820d}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.935.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.935.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_194230879</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.935</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.935</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.935.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.935.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.936
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.936</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:44:11 2021</timestamp>
+			<uuid>{81c66529-e0c1-44a3-9f5b-4fa733a023d2}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.936.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.936.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_194411479</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.936</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.936</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.936.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.936.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.937
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.937</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:48:08 2021</timestamp>
+			<uuid>{bd9d9f77-7462-4525-90e6-5d0ef68ade76}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.937.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.937.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_194808168</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.937</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.937</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.937.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.937.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.938
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.938</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:49:18 2021</timestamp>
+			<uuid>{32d7e379-2c6c-4373-882c-3b99a0380b73}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.938.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.938.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_194918769</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.938</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.938</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.938.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.938.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.939
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.939</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:54:01 2021</timestamp>
+			<uuid>{ec57559b-cca4-49b6-bd30-ed2c2f9d79d7}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.939.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.939.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_195401676</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.939</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.939</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.939.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.939.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.940
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.940</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:55:05 2021</timestamp>
+			<uuid>{c04481cd-5334-4cf2-9eac-309bdb1b26de}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.940.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.940.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_195505368</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.940</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.940</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.940.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.940.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.941
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1_ams_state1_Interactive.941</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>BioZ_AFE_CTBPSDM_TB</value>
+							</option>
+							<option>lib
+								<value>BioZ_EMG_Model</value>
+							</option>
+							<option>sim
+								<value>ams</value>
+							</option>
+							<option>view
+								<value>config</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>ams_state1</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>VT("")
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_in
+								<evalType>point</evalType>
+							</output>
+							<output>res1
+								<evalType>point</evalType>
+							</output>
+							<output>res2
+								<evalType>point</evalType>
+							</output>
+							<output>SDM_out
+								<evalType>point</evalType>
+							</output>
+							<output>vdac
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1p
+								<evalType>point</evalType>
+							</output>
+							<output>/sum1n
+								<evalType>point</evalType>
+							</output>
+							<output>sum1
+								<evalType>point</evalType>
+							</output>
+							<output>/compp
+								<evalType>point</evalType>
+							</output>
+							<output>/compn
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/sum1p") - VT("/sum1n"))
+								<evalType>point</evalType>
+							</output>
+							<output>comp
+								<evalType>point</evalType>
+							</output>
+							<output>res3
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>t_trans
+						<value>2m</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>pi
+						<value>3.1416</value>
+					</var>
+					<var>Voh
+						<value>1.8</value>
+					</var>
+					<var>vcm
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var enabled="1">vpk
+						<value>0.8</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fs
+						<value>62.5k</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>f0
+						<value>fs/4</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>fB
+						<value>fs/(2*256)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a1
+						<value>1.0669</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a2
+						<value>0.9777</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>a3
+						<value>1.3350</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>b1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c1
+						<value>0.4891</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c2
+						<value>0.2660</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>c3
+						<value>0.0794</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Cf
+						<value>30p</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av1_dB
+						<value>75</value>
+					</var>
+					<var>Av2_dB
+						<value>75</value>
+					</var>
+					<var>Av3_dB
+						<value>75</value>
+					</var>
+					<var>Av1
+						<value>10**(Av1_dB/20)</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av2
+						<value>10**(Av2_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Av3
+						<value>10**(Av3_dB/20)</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW1
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW2
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW3
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>GBW1
+						<value>Av1*BW1</value>
+					</var>
+					<var>GBW2
+						<value>Av2*BW2</value>
+					</var>
+					<var>GBW3
+						<value>Av3*BW3</value>
+					</var>
+					<var>SR1
+						<value>2*pi*GBW1*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR2
+						<value>2*pi*GBW2*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>SR3
+						<value>2*pi*GBW3*Voh</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tr
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tf
+						<value>20n</value>
+						<dependentTests>
+							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_imp_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_DS_TB:1</dependentTest>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rdc
+						<value>300</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Rac
+						<value>100</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Ron
+						<value>140</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Roff
+						<value>500M</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffp_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Voffn_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>tdelay_comp
+						<value>0</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>BW
+						<value>fs</value>
+						<dependentTests>
+							<dependentTest enabled="1">BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v7_TB:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottingmode
+						<value>New Win</value>
+					</plottingoption>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>useMaestroPlottingTemplate
+						<value>yes</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+					<plottingoption>allplottingtemplates
+						<value></value>
+					</plottingoption>
+					<plottingoption>defaultplottingtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<jobpolicyname>ADE XL Default</jobpolicyname>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sep 24 19:55:45 2021</timestamp>
+			<uuid>{f18fce1d-c049-44c2-8a5d-79e7a5afcde7}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.941.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.941.rdb</simresults>
+			<rawdatadelstrategy>SaveAll
+				<simdatasavemode>All</simdatasavemode>
+			</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/s2424_fernande_195545413</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.941</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N-path_v7_TB/adexl/results/data/Interactive.941</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_CRFF_N#2dpath_v7_TB/adexl/results/data/Interactive.941.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.941.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

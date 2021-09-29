@@ -42,9 +42,9 @@ module BioZ_AFE_Processing_2 ( VIN_P_I, VIN_N_I, VIN_P_Q, VIN_N_Q, re, im, mag, 
 	analog begin
 		
 		re_buffer = -(`M_PI/2) * (V(VIN_P_I,VIN_N_I) / (I_stim_se*TCA_gain*TIA_gain));
-		im_buffer = -(`M_PI/2) * (V(VIN_P_Q,VIN_N_Q) / (I_stim_se*TCA_gain*TIA_gain));
-		mag_buffer = sqrt(pow(re_buffer,2)+pow(im_buffer,2))/2; //Divided by 2 to account for 2 BioZ models with path to GND
-		pha_buffer = atan2(im_buffer,re_buffer)*(180.0/`M_PI) - 22.5;
+		im_buffer = (`M_PI/2) * (V(VIN_P_Q,VIN_N_Q) / (I_stim_se*TCA_gain*TIA_gain));
+		mag_buffer = sqrt(pow(re_buffer,2)+pow(im_buffer,2));
+		pha_buffer = atan2(im_buffer,re_buffer)*(180.0/`M_PI) + 22.5;
 		V(mag) <+ mag_buffer;
 		V(pha) <+ pha_buffer;
 		V(re) <+ mag_buffer*cos(pha_buffer*`M_PI/180);

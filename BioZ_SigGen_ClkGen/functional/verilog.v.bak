@@ -19,7 +19,7 @@ module BioZ_SigGen_ClkGen (
 
 	reg start_clk;
 
-	real FREQ_ADC = 1 * 15; // in kHz
+	real FREQ_ADC = 10 * 15; // in kHz
 	parameter PHASE_ADC = 0; // in degrees
 	parameter DUTY_ADC = 50; // in percentage
 

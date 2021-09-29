@@ -1,0 +1,48 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Wed Sep 29 17:18:02 2021 
+Best design point: 1
+Design specs: 
+	BioZ_EMG_Model:BioZ_AFE_DTBPSDM_diff_opamp_TB:1	corner	Nominal - 
+	BW_vams_amp		Error	No
+	GBW_vams_amp		Error	No
+	PM_vams_amp		Error	No
+	BW_mos_ac_amp		9.789M
+	GBW_mos_ac_amp		21.92M
+	PM_mos_ac_amp		66.68
+	BW_vams_int		Error	No
+	GBW_vams_int		Error	No
+	PM_vams_int		Error	No
+	BW_mos_ac_int		16.01K
+	GBW_mos_ac_int		59.57M
+	PM_mos_ac_int		83.36
+	BW_mos_ac_int2		177.9K
+	GBW_mos_ac_int2		79.65M
+	PM_mos_ac_int2		-22.11
+Design parameters: 
+	t_trans		5m
+	vcm		900m
+	vpk		800m
+	fs		62.5K
+	f0		15.62K
+	fB		122.1
+	Av_dB		71.39
+	Av		3.711K
+	BW		15.62K
+	SR		655.8M
+	Cf		30p
+	b1		2
+	Roff		500M
+	Ron		10
+	Rout_ac		100
+	tf		20n
+	tr		20n
+	rf		150K
+	wp2		750K
+	wz		5M
+
+Interactive.1211
+Number of points completed: 1
+Number of simulation errors: 6
+Interactive.1211 completed. 
+Current time: Wed Sep 29 17:18:30 2021 

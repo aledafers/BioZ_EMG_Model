@@ -1,0 +1,37 @@
+//Revision 58
+config \BioZ_AFE_DTBPSDM_CRFB_N-path_v9_TB ;
+design BioZ_EMG_Model.\BioZ_AFE_DTBPSDM_CRFB_N-path_v9_TB :schematic;
+liblist BioZ_EMG_Model, analogLib, PRIMLIB, GATES_HD;
+
+viewlist schematic, spectre, functional, behavioral, ahdl, symbol;
+stoplist spectre;
+
+
+cell BioZ_EMG_Model.BioZ_AFE_4thOrder_CTBPLF binding :verilogams;
+cell BioZ_EMG_Model.BioZ_AFE_Comparator binding :verilogams;
+cell BioZ_EMG_Model.BioZ_AFE_DTBPSDM_DAC_1bit binding :verilogams;
+cell BioZ_EMG_Model.BioZ_AFE_Mixer_Digital binding :functional;
+cell BioZ_EMG_Model.BioZ_AFE_4thOrder_DTBPLF binding :verilogams;
+cell BioZ_EMG_Model.BioZ_AFE_DTBPSDM_diff_opamp binding :verilogams;
+cell BioZ_EMG_Model.BioZ_AFE_DTBPSDM_switch binding :verilogams;
+cell BioZ_EMG_Model.BioZ_AFE_20bDAC_ideal binding :verilogams;
+cell BioZ_EMG_Model.BioZ_AFE_DTBPSDM_4to2_Encoder binding :functional;
+cell BioZ_EMG_Model.BioZ_AFE_DTBPSDM_Flash_ADC_2bit binding :schematic;
+cell BioZ_EMG_Model.BioZ_AFE_DTBPSDM_Flash_ADC_2bit_diff_comp binding :verilogams;
+
+cell ahdlLib.decimator binding :veriloga;
+
+cell GATES_HD.invr binding :schematic;
+
+cell analogLib.cap binding :spectre;
+cell analogLib.idc binding :spectre;
+cell analogLib.vdc binding :spectre;
+cell analogLib.vpulse binding :spectre;
+cell analogLib.vsin binding :spectre;
+cell analogLib.res binding :spectre;
+
+cell PRIMLIB.ne binding :spectre;
+cell PRIMLIB.pe binding :spectre;
+
+
+endconfig

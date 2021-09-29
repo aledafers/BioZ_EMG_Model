@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Tue Jun  8 14:48:56 2021 
+Best design point: 1
+Design specs: 
+	BioZ_EMG_Model:BioZ_SigGen_noFilter_TB:1	corner	Nominal - 
+	VO_trans		Error	No
+Design parameters: 
+	t_meas		4.5m
+	Ibias		100u
+
+Interactive.67
+Number of points completed: 1
+Number of simulation errors: 1
+Interactive.67 completed. 
+Current time: Tue Jun  8 14:49:21 2021 

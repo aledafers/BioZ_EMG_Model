@@ -1,0 +1,54 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_SigGen_DAC" "verilogams"
+//Current Steering DAC
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_DTBPSDM_DAC_1bit ( ION, IOP, bias, vdda, vssa, vsub, P );
+
+  input P;
+  inout IOP;
+  inout vsub;
+  inout vdda;
+  inout bias;
+  inout ION;
+  inout vssa;
+
+  logic P;
+  electrical IOP,ION, bias, vdda, vssa, vsub;
+
+  parameter real vcm = 0.9; //Common mode voltage
+  real amp = 0;
+  real vop, von;
+  real bias_i;
+
+ // Digital block
+ // Digital control block
+always @(P)
+begin
+	case(P)
+		1'b0: amp = -18e-3;
+		1'b1: amp = 18e-3;
+		default: amp = 18e-3;
+	endcase
+end
+
+  // Analog block
+analog initial begin
+	vop = 0;
+	von = 0;
+end
+
+analog begin
+
+	bias_i = -I(bias)/1e-6;
+
+	vop = vcm + amp*bias_i;
+	von = vcm - amp*bias_i;
+
+	V(IOP) <+ vop;
+	V(ION) <+ von;
+
+end 
+
+endmodule

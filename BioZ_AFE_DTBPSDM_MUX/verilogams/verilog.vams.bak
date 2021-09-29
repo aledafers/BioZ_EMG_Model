@@ -1,0 +1,24 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_DTBPSDM_MUX" "verilogams"
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_DTBPSDM_MUX ( D0p, D0n, D1p, D1n, S, Y, vssa, vdda );
+
+input D0p, D0n, D1p, D1n;
+inout vssa, vdda;
+output Y;
+
+electrical D0p, D0n, D1p, D1n, Y;
+real Y_aux;
+logic S;
+
+analog begin
+	if (S) begin 
+		Y_aux = V(D1p,vssa) - V(D1n,vssa);
+	end else begin
+		Y_aux = V(D0p,vssa) - V(D0n,vssa);
+	end
+	V(Y,vssa) <+ Y_aux;
+end
+endmodule

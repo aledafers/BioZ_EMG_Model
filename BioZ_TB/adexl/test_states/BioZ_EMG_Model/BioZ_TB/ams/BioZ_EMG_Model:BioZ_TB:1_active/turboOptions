@@ -9,7 +9,7 @@
 (amsTurboOpts disableVddOverride) nil
 (amsTurboOpts enable_proc_affinity) nil
 (amsTurboOpts errorLevel) "Do not override"
-(amsTurboOpts mtOption) "Manual"
+(amsTurboOpts mtOption) "Auto"
 (amsTurboOpts numThreads) "16"
 (amsTurboOpts optvdd) 3.3
 (amsTurboOpts preserveInst) nil

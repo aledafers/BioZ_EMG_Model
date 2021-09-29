@@ -1,0 +1,48 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_20bDAC_ideal" "verilogams"
+
+`include "constants.vams"
+`include "disciplines.vams"
+`timescale 1ns / 1ps
+
+module BioZ_AFE_20bDAC_ideal (Vout, Dinp, Dinn, Clk, Vdda, Vssa );
+
+parameter integer bits = 2 from [1:24];			// ADC resolution
+parameter real V_fullscale = 2.4;					// input signal range from 0 to fullscale
+parameter real td = 0;							// delay from clock edge to output
+parameter real tt = 0;							// transition time of output
+parameter real Vdd = 1.8;							// voltage level of logic high
+parameter real thresh = 0.9;					// logic thrshold level
+parameter real vcm = 0.675;
+parameter integer dir = 1 from [-1:1] exclude 0;	// 1:rising edge, -1:falling edge  
+
+output Vout;
+input [bits-1:0] Dinp, Dinn;
+input Clk, Vdda, Vssa;
+
+electrical Vout, Clk, Vdda, Vssa;
+electrical [bits-1:0] Dinp, Dinn;
+
+real aout;
+integer weight;
+genvar i;
+
+analog begin
+	@(cross(V(Clk, Vssa) - thresh, +1) or initial_step) begin // rising edge trigger
+		aout = 0;
+		weight = 2;
+		for(i=bits-1; i>=0; i=i-1) begin
+			if(V(Dinp[i], Vssa) > thresh) begin			
+				aout = aout + V_fullscale/weight;
+			end 
+			if(V(Dinn[i], Vssa) < thresh) begin			
+				aout = aout + V_fullscale/weight;
+			end 
+			weight = 2*weight;
+		end
+	end
+	
+	//V(Vout) <+ transition(aout, td, tt) - vcm;
+	V(Vout) <+ aout - 2*vcm;
+end
+
+endmodule

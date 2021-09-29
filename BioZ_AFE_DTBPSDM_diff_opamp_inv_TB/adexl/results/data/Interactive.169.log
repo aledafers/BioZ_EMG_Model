@@ -1,0 +1,29 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Tue Sep 14 17:15:32 2021 
+Best design point: 1
+Design specs: 
+	BioZ_EMG_Model:BioZ_AFE_DTBPSDM_diff_opamp_inv_TB:1	corner	Nominal - 
+Design parameters: 
+	vdda		800m
+	vbias1		600m
+	vbias2		300m
+	vcm		400m
+	ln		500n
+	lp		500n
+	wn		40u
+	wp		64u
+	ln_c		500n
+	lp_c		500n
+	wn_c		100u
+	wp_c		100u
+	ln_b		180n
+	lp_b		180n
+	wn_b		1u
+	wp_b		1u
+
+Interactive.169
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.169 completed. 
+Current time: Tue Sep 14 17:15:38 2021 

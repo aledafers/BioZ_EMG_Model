@@ -1,0 +1,149 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_Loop_Filter" "verilogams"
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_4thOrder_CTBPLF (in, out, dac1, dac2, dac3, dac4, bias_in, vdda, vssa, vsub);
+
+input in;
+input dac1;
+input dac2;
+input dac3;
+input dac4;
+input bias_in;
+input vdda;
+input vssa;
+input vsub;
+output out;
+
+electrical in,out;
+electrical dac1,dac2,dac3,dac4;
+electrical bias_in, vdda, vssa, vsub;
+
+real int1_out_aux, int2_out_aux, int3_out_aux, int4_out_aux;
+electrical int1_in,ideal_int1_out,int1_out;
+electrical int2_in,ideal_int2_out,int2_out;
+electrical int3_in,ideal_int3_out,int3_out;
+electrical int4_in,ideal_int4_out,int4_out;
+
+parameter real fs = 80k;
+parameter real f0 = 0.25*fs;
+parameter real w0 = 2*`M_PI*f0;
+parameter real ws = 2*`M_PI*fs;
+parameter real Q = 100;
+parameter real wp1 = 10*ws;
+parameter real wp2 = 10*ws;
+parameter real wp3 = 10*ws;
+parameter real wp4 = 10*ws;
+parameter real k1err = 1;
+parameter real k2err = 1;
+parameter real k3err = 1;
+parameter real k4err = 1;
+parameter integer bw1_en = 0;
+parameter integer bw2_en = 0;
+parameter integer bw3_en = 0;
+parameter integer bw4_en = 0;
+
+//parameter real a1 = -0.147298027543838;
+//parameter real a2 = -0.186224272560591;
+//parameter real a3 = -0.1;
+//parameter real a4 = 0.387242420289871;
+//parameter real g1 = 1.32055002596597; //adjust resonant frequency of 1st resonator
+//parameter real g2 = 1.98794332344793;
+//parameter real b1 = 0.13;
+//parameter real b2 = 0;
+//parameter real b3 = 0;
+//parameter real b4 = 0;
+//parameter real b5 = 0;
+//parameter real c1 = 1.87690199909052;
+//parameter real c2 = 0.646658556335927;
+//parameter real c3 = 1.23559071711956;
+//parameter real c4 = 0.897353875452716;
+
+// NON-IDEAL INTEGRATORs - bw_opamp = 10*fs
+parameter real a1 = -0.2;   //adjust NTF poles of 1st resonator 
+parameter real a2 = -0.251; //adjust NTF poles of 1st resonator
+//parameter real a1 = -0.147298027543838;
+//parameter real a2 = -0.186224272560591;
+parameter real a3 = -0.439101956437108;
+parameter real a4 = 0.387242420289871;
+parameter real g1 = 1.33; //adjust resonant frequency of 1st resonator
+parameter real g2 = 1.98794332344793;
+parameter real b1 = 0.2;
+parameter real b2 = 0;
+parameter real b3 = 0;
+parameter real b4 = 0;
+parameter real b5 = 0;
+parameter real c1 = 1.87690199909052;
+parameter real c2 = 0.646658556335927;
+parameter real c3 = 1.23559071711956;
+parameter real c4 = 0.897353875452716;
+
+// NON-IDEAL INTEGRATORs - bw_opamp = 15*fs
+//parameter real a1 = -0.147298027543838;   //adjust NTF poles of 1st resonator 
+//parameter real a2 = -0.186224272560591; //adjust NTF poles of 1st resonator 
+//parameter real a3 = -0.439101956437108;
+//parameter real a4 = 0.387242420289871;
+//parameter real g1 = 1.32055002596597; //adjust resonant frequency of 1st resonator
+//parameter real g2 = 1.98794332344793;
+//parameter real b1 = 0.16;
+//parameter real b2 = 0;
+//parameter real b3 = 0;
+//parameter real b4 = 0;
+//parameter real b5 = 0;
+//parameter real c1 = 1.87690199909052;
+//parameter real c2 = 0.646658556335927;
+//parameter real c3 = 1.23559071711956;
+//parameter real c4 = 0.897353875452716;
+
+// ORIGINAL PARAMETERS - IDEAL INTEGRATORS - bw_opamp > 10*fs
+//parameter real a1 = -0.147298027543838;
+//parameter real a2 = -0.186224272560591;
+//parameter real a3 = -0.439101956437108;
+//parameter real a4 = 0.387242420289871;
+//parameter real g1 = 1.32055002596597;
+//parameter real g2 = 1.98794332344793;
+//parameter real b1 = 0.192769279818280;
+//parameter real b2 = 0;
+//parameter real b3 = 0;
+//parameter real b4 = 0;
+//parameter real b5 = 0;
+//parameter real c1 = 1.87690199909052;
+//parameter real c2 = 0.646658556335927;
+//parameter real c3 = 1.23559071711956;
+//parameter real c4 = 0.897353875452716;
+
+analog begin
+
+	V(int1_in) <+ b1*V(in) - a1*V(dac1) - g1*V(int2_out);
+	V(int2_in) <+ b2*V(in) - a2*V(dac2) + c1*V(int1_out);
+	V(ideal_int1_out) <+ laplace_nd(V(int1_in),{1},{0,1/fs});
+	V(ideal_int2_out) <+ laplace_nd(V(int2_in),{1},{0,1/fs});
+	int1_out_aux = laplace_nd(V(ideal_int1_out),{k1err},{1,bw1_en/wp1});
+	int2_out_aux = laplace_nd(V(ideal_int2_out),{k2err},{1,bw2_en/wp2});
+	
+	if      (int1_out_aux > 1.8)  V(int1_out) <+ 1.8;
+	else if (int1_out_aux < -1.8) V(int1_out) <+ -1.8;
+	else                          V(int1_out) <+ int1_out_aux;
+	if      (int2_out_aux > 1.8)  V(int2_out) <+ 1.8;
+	else if (int2_out_aux < -1.8) V(int2_out) <+ -1.8;
+	else                          V(int2_out) <+ int2_out_aux;
+
+	V(int3_in) <+ b3*V(in) - a3*V(dac3) - g2*V(int4_out) + c2*V(int2_out);
+	V(int4_in) <+ b4*V(in) - a4*V(dac4) + c3*V(int3_out);
+	V(ideal_int3_out) <+ laplace_nd(V(int3_in),{1},{0,1/fs});
+	V(ideal_int4_out) <+ laplace_nd(V(int4_in),{1},{0,1/fs});
+	int3_out_aux = laplace_nd(V(ideal_int3_out),{k3err},{1,bw3_en/wp3});
+	int4_out_aux = laplace_nd(V(ideal_int4_out),{k4err},{1,bw4_en/wp4});
+
+	if      (int3_out_aux > 1.8)  V(int3_out) <+ 1.8;
+	else if (int3_out_aux < -1.8) V(int3_out) <+ -1.8;
+	else                          V(int3_out) <+ int3_out_aux;
+	if      (int4_out_aux > 1.8)  V(int4_out) <+ 1.8;
+	else if (int4_out_aux < -1.8) V(int4_out) <+ -1.8;
+	else                          V(int4_out) <+ int4_out_aux;
+
+	V(out) <+ b5*V(in) + c4*V(int4_out);
+
+end
+endmodule

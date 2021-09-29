@@ -1,0 +1,72 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_Comparator" "verilogams"
+
+`timescale 1ns/1ps
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_DTBPSDM_Flash_ADC_2bit_diff_comp ( outp, outn, clk, bias_in, vdda, vddd, vssa, vssd, vsub, inp, inn, vref );
+
+  output outp;  
+  output outn;
+  input bias_in;
+  inout vdda;
+  inout vddd;
+  inout vssa;
+  inout vssd;
+  inout vsub;
+  input inp;
+  input inn;
+  input vref;
+
+logic clk;
+//logic outn_aux, outp_aux, outn, outp;
+electrical vdda, vddd, vssa, vssd, vsub, inp, inn, vref;
+reg outp, outn, outp_aux, outn_aux;
+real vdiff = 0;
+real c2 = 3; //Pre-amp gain
+
+parameter real tdel = 0 from [0:inf); //in ns
+parameter real Voffp = 0;
+parameter real Voffn = 0;
+
+
+//always @(negedge clk) begin
+//	#1	
+//	outn = 0;
+// 	outp = 0;
+//end
+initial begin
+	outn_aux <= 1;
+	outp_aux <= 0;
+end
+
+always @(posedge clk) begin
+	vdiff = c2*(V(inp) - V(inn));
+	outn <= outn_aux;
+	outp <= outp_aux;
+	// metastability model
+	//if ((vdiff <= Voffp + V(vref)) && (vdiff >= -Voffn + V(vref))) begin
+	//	if ($random > 0) begin
+	//		#tdel
+	//		outn_aux <= 0;
+	//		outp_aux <= 1;
+	//	end
+	//	else begin
+	//		#tdel
+	//		outn_aux <= 1;
+	//		outp_aux <= 0;
+	//	end
+	//end
+	// delayed comparator
+	else if (vdiff > Voffp + V(vref)) begin
+		#tdel	
+		outn_aux <= 0;
+		outp_aux <= 1;
+	end	
+	else if (vdiff < -Voffn + V(vref)) begin
+		#tdel	
+		outn_aux <= 1;
+		outp_aux <= 0;
+	end
+end 
+endmodule

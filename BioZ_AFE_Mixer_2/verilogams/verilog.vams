@@ -22,8 +22,8 @@ electrical IF_N, IF_P, RF_N, RF_P, vssa;
 parameter real ron = 1; // on resistance
 parameter real roff = 1G; //off resistance
 parameter real td = 0; //delay time
-parameter real tr = 200n; //rise time
-parameter real tf = 200n; //fall time
+parameter real tr = 500n; //rise time
+parameter real tf = 500n; //fall time
 
 
 integer sel = 0; // sel = 0 for I path, sel = 1 for Q path 
@@ -34,41 +34,55 @@ real iin;
 
 //analog block
 analog begin
-
-	iin = I(RF_P,RF_N);
 /*
-	I(IF_P,vssa) <+ iin * V(IQ_P,IQ_N) / 2;
-	I(IF_N,vssa) <+ -iin * V(IQ_P,IQ_N) / 2;
-*/
+	iin = I(RF_P,RF_N);
 		
 	if(IQ_P) begin
 		I(IF_P,IF_N) <+ -iin;
 	end else begin
 		I(IF_P,IF_N) <+ iin;
 	end 
+*/
 
-/*
+
     @(initial_step) begin
 		r1 = roff;
 		r2 = roff;
 	end
 
-	@(posedge IQ_P) begin   
+	if(IQ_P) begin   
 		r1 = ron;
 		r2 = roff;
     end
 	
-	@(negedge IQ_P) begin  
+	if(IQ_N) begin  
 		r1 = roff;
 		r2 = ron;
     end
 
 	I(RF_P,IF_P) <+ V(RF_P,IF_P)/transition(r1,td,tr,tf);
-    I(RF_N,IF_N) <+ V(RF_N,IF_N)/transition(r1,td,tr,tf);
+	I(RF_N,IF_N) <+ V(RF_N,IF_N)/transition(r1,td,tr,tf);
 
-	I(RF_P,IF_N) <+ V(RF_P,IF_P)/transition(r2,td,tr,tf);
-    I(RF_N,IF_P) <+ V(RF_P,IF_P)/transition(r2,td,tr,tf);
-*/ 
+	I(RF_P,IF_N) <+ V(RF_P,IF_N)/transition(r2,td,tr,tf);
+	I(RF_N,IF_P) <+ V(RF_N,IF_P)/transition(r2,td,tr,tf);
+
+/*
+	if(IQ_P) begin   
+		I(RF_P,IF_P) <+ V(RF_P,IF_P)/ron;
+		I(RF_N,IF_N) <+ V(RF_N,IF_N)/ron;
+
+		I(RF_P,IF_N) <+ V(RF_P,IF_N)/roff;
+		I(RF_N,IF_P) <+ V(RF_N,IF_P)/roff;
+    end
+	
+	if(IQ_N) begin  
+		I(RF_P,IF_P) <+ V(RF_P,IF_P)/roff;
+		I(RF_N,IF_N) <+ V(RF_N,IF_N)/roff;
+
+		I(RF_P,IF_N) <+ V(RF_P,IF_N)/ron;
+		I(RF_N,IF_P) <+ V(RF_N,IF_P)/ron;
+    end
+*/
 end
 
 endmodule

@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      fernande
+HostName                       s2424.it.kth.se
+ProcessIdentifier              26391
+ProcessCreationTime_UTC        1632922485
+ProcessCreationTime_Readable   Wed Sep 29 15:34:45 2021 CEST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_AFE_DTBPSDM_diff_opamp_TB3/schematic/sch.oa.cdslck
+TimeEditLocked                 Wed Sep 29 16:15:26 2021 CEST

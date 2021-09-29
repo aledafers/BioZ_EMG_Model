@@ -1,0 +1,230 @@
+//Verilog HDL for "BioZ_EMG_Model", "BioZ_SIGGEN_DACCtrl" "functional"
+
+
+module BioZ_SigGen_DACCtrl_3 (
+CountEnable,
+Clk,
+Clk_IF,
+Resetn,
+StepNum,
+P,
+clk_merged_IF_P,
+clk_merged_IF_N,
+IP,
+IN,
+QP,
+QN
+);
+
+
+//Inputs
+input CountEnable;
+input Clk;
+input Clk_IF;
+input Resetn;
+input StepNum;
+
+//Outputs
+//output wire P1,P2,P3,P4,P5; //Control signals for the DAC
+output reg [16:0] P; //Control signals for the DAC
+output wire IP; // in-phase (I) reference clock
+output wire QP; // quadrature (Q) reference clock
+output wire IN,QN,clk_merged_IF_P,clk_merged_IF_N;
+
+reg [16:0] S32;
+reg [16:0] S16;
+
+reg [4:0] count;
+reg [4:0] count_IF;
+
+reg aux_Q;
+
+reg clk_bioz_P, PM_P, IP_aux, QP_aux, IN_aux, QN_aux;
+wire clk_bioz_N, PM_N;
+
+// 5bit counter state machine
+always @(posedge Clk, negedge Resetn)
+begin
+    if (Resetn == 0) begin
+        count <= 0;
+    end else begin
+        count <= count + 1;    
+    end    
+end
+
+always @(posedge Clk_IF, negedge Resetn)
+begin
+    if (Resetn == 0) begin
+        count_IF <= 0;
+    end else begin
+        count_IF <= count_IF + 1;    
+    end    
+end
+
+// AMS VERSION 32 steps - 16 steps
+
+//Intermediate signals 32 steps
+always @(CountEnable, count)
+begin
+    if (CountEnable == 1) begin
+        case(count)
+            0:  S32 = 17'b0_0000_0000_0000_0001; //0 0V                
+            1:  S32 = 17'b0_0000_0000_0000_0010;
+            2:  S32 = 17'b0_0000_0000_0000_0100;
+            3:  S32 = 17'b0_0000_0000_0000_1000;
+            4:  S32 = 17'b0_0000_0000_0001_0000;
+            5:  S32 = 17'b0_0000_0000_0010_0000;
+            6:  S32 = 17'b0_0000_0000_0100_0000;
+            7:  S32 = 17'b0_0000_0000_1000_0000;
+            8:  S32 = 17'b0_0000_0001_0000_0000; //8 +1V
+            9:  S32 = 17'b0_0000_0000_1000_0000;
+            10: S32 = 17'b0_0000_0000_0100_0000;
+            11: S32 = 17'b0_0000_0000_0010_0000;
+            12: S32 = 17'b0_0000_0000_0001_0000;
+            13: S32 = 17'b0_0000_0000_0000_1000;
+            14: S32 = 17'b0_0000_0000_0000_0100;
+            15: S32 = 17'b0_0000_0000_0000_0010;
+            16: S32 = 17'b0_0000_0000_0000_0001; //0 0V
+            17: S32 = 17'b0_0000_0010_0000_0000; 
+            18: S32 = 17'b0_0000_0100_0000_0000;
+            19: S32 = 17'b0_0000_1000_0000_0000;
+            20: S32 = 17'b0_0001_0000_0000_0000;
+            21: S32 = 17'b0_0010_0000_0000_0000;
+            22: S32 = 17'b0_0100_0000_0000_0000;
+            23: S32 = 17'b0_1000_0000_0000_0000;            
+            24: S32 = 17'b1_0000_0000_0000_0000; //16 -1V
+            25: S32 = 17'b0_1000_0000_0000_0000;
+            26: S32 = 17'b0_0100_0000_0000_0000;
+            27: S32 = 17'b0_0010_0000_0000_0000;
+            28: S32 = 17'b0_0001_0000_0000_0000;
+            29: S32 = 17'b0_0000_1000_0000_0000;
+            30: S32 = 17'b0_0000_0100_0000_0000;
+            31: S32 = 17'b0_0000_0010_0000_0000;
+            
+		   default: S32 = 17'b0_0000_0000_0000_0001; //0 0V
+         endcase   
+         
+    end else begin
+            S32 = 17'b0_0000_0000_0000_0001; //0 0V  
+    end
+end
+
+//Intermediate signals 16 steps
+always @(CountEnable, count)
+begin
+    if (CountEnable == 1) begin
+        case(count)
+            0:  S16 = 17'b0_0000_0000_0000_0001; //0 0V                
+            1:  S16 = 17'b0_0000_0000_0000_0100;
+            2:  S16 = 17'b0_0000_0000_0001_0000;
+            3:  S16 = 17'b0_0000_0000_0100_0000;
+            4:  S16 = 17'b0_0000_0001_0000_0000;//8 +1V
+            5:  S16 = 17'b0_0000_0000_0100_0000;
+            6:  S16 = 17'b0_0000_0000_0001_0000;
+            7:  S16 = 17'b0_0000_0000_0000_0100;
+            8:  S16 = 17'b0_0000_0000_0000_0001; //0 0V
+            9:  S16 = 17'b0_0000_0100_0000_0000;
+            10: S16 = 17'b0_0001_0000_0000_0000;
+            11: S16 = 17'b0_0100_0000_0000_0000;
+            12: S16 = 17'b1_0000_0000_0000_0000; //16 -1V
+            13: S16 = 17'b0_0100_0000_0000_0000;
+            14: S16 = 17'b0_0001_0000_0000_0000;
+            15: S16 = 17'b0_0000_0100_0000_0000;            
+            16: S16 = 17'b0_0000_0000_0000_0001; //0 0V                
+            17: S16 = 17'b0_0000_0000_0000_0100;
+            18: S16 = 17'b0_0000_0000_0001_0000;
+            19: S16 = 17'b0_0000_0000_0100_0000;
+            20: S16 = 17'b0_0000_0001_0000_0000;//8 +1V
+            21: S16 = 17'b0_0000_0000_0100_0000;
+            22: S16 = 17'b0_0000_0000_0001_0000;
+            23: S16 = 17'b0_0000_0000_0000_0100;
+            24: S16 = 17'b0_0000_0000_0000_0001; //0 0V
+            25: S16 = 17'b0_0000_0100_0000_0000;
+            26: S16 = 17'b0_0001_0000_0000_0000;
+            27: S16 = 17'b0_0100_0000_0000_0000;
+            28: S16 = 17'b1_0000_0000_0000_0000; //16 -1V
+            29: S16 = 17'b0_0100_0000_0000_0000;
+            30: S16 = 17'b0_0001_0000_0000_0000;
+            31: S16 = 17'b0_0000_0100_0000_0000;
+                 
+            default: S16 = 17'b0_0000_0000_0000_0001; //0 0V
+         endcase   
+         
+    end else begin
+            S16 = 17'b0_0000_0000_0000_0001; //0 0V  
+    end
+end
+
+always @(StepNum,S16,S32)
+begin
+    if (StepNum == 0) begin // 0 selects 32 steps, 1 selects 16 steps
+        P = S32;
+    end else begin
+        P = S16;
+    end
+    
+end
+
+// clk_bioz Outputs
+
+
+always @(StepNum,count)
+begin
+    if(StepNum == 0) begin // 32 Steps
+        clk_bioz_P <= ~count[4];
+    end else begin // 16 steps
+        clk_bioz_P <= ~count[3];
+    end
+end
+
+// I/Q Outputs
+
+always @(StepNum,count_IF)
+begin
+	if(StepNum == 0) begin // 32 Steps
+		IP_aux <= ~count_IF[4] & ~count_IF[3];
+		IN_aux <= count_IF[4] & ~count_IF[3];	
+	end else begin // 16 steps
+		IP_aux <= ~count_IF[3] & ~count_IF[2];
+		IN_aux <= count_IF[3] & ~count_IF[2];	
+	end
+end
+
+//assign IN_aux = ~IP_aux;
+
+//Q is created by sampling I exactly in the middle of the high pulse. 
+//Aux_Q is the clock used to sample I;
+always @(StepNum,count_IF)
+begin
+	if(StepNum == 0) begin //32 steps
+		QP_aux = ~count_IF[4] & count_IF[3];
+		QN_aux <= count_IF[4] & count_IF[3];	
+	end else begin //16 steps
+		QP_aux = ~count_IF[3] & count_IF[2];
+		QN_aux <= count_IF[3] & count_IF[2];	
+	end
+end
+
+//always @(posedge aux_Q, negedge Resetn)
+//begin
+//    if (Resetn == 0) begin
+//        QP_aux <= 0;         
+//    end else begin
+//        QP_aux <= (IP_aux & aux_Q);
+//    end    
+//end
+
+//assign QN_aux = ~QP_aux;
+
+assign IP = IP_aux;
+assign IN = IN_aux;
+assign QP = QP_aux;
+assign QN = QN_aux;
+
+// clk_merged Outputs
+
+//assign clk_merged_IF_P = (IP~^clk_bioz_P) | (QP~^clk_bioz_P);
+assign clk_merged_IF_P = (IP|QP)~^clk_bioz_P;
+assign clk_merged_IF_N = ~clk_merged_IF_P;
+
+endmodule

@@ -54,7 +54,7 @@ module BioZ_SigGen_ClkGen (
 	always @(Fsel,clk_SigGen,FREQ) begin
 		case (Fsel)
 			4'b0000:	begin
-					FREQ = 32000;    //  32 MHz
+					FREQ = 32000;    //  32 MHz; fbioz = 1 MHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -63,7 +63,7 @@ module BioZ_SigGen_ClkGen (
 					end
 
 			4'b0001:	begin
-					FREQ = 16000;    //  16 MHz
+					FREQ = 16000;    //  16 MHz; fbioz = 500 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -71,7 +71,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b0010:	begin
-					FREQ = 8000;     //  8 MHz
+					FREQ = 8000;     //  8 MHz; fbioz = 250 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -79,7 +79,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b0011:	begin
-					FREQ = 4000;     //  4 MHz
+					FREQ = 4000;     //  4 MHz; fbioz = 125 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -87,7 +87,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b0100:	begin
-					FREQ = 2000;     //  2 MHz
+					FREQ = 2000;     //  2 MHz; fbioz = 62.5 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -95,7 +95,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b0101:	begin
-					FREQ = 1000;     //  1 MHz
+					FREQ = 1000;     //  1 MHz; fbioz = 31.25 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -103,7 +103,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b0110:	begin
-					FREQ = 500;      //  500 kHz (REFERENCE FOR THE PLL)
+					FREQ = 500;      //  500 kHz (REFERENCE FOR THE PLL); fbioz = 15.625 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -111,7 +111,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b0111:	begin
-					FREQ = 250;      //  250 kHz
+					FREQ = 250;      //  250 kHz; fbioz = 7.812 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -119,7 +119,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b1000:	begin
-					FREQ = 125;      //  125 kHz
+					FREQ = 125;      //  125 kHz; fbioz = 3.906 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -127,7 +127,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b1001:	begin
-					FREQ = 62.5;     //  62.500 kHz
+					FREQ = 62.5;     //  62.500 kHz; fbioz = 1.953 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;
@@ -135,7 +135,7 @@ module BioZ_SigGen_ClkGen (
 					start_dly = quarter * PHASE/90;
 					end
 			4'b1010:	begin
-					FREQ = 31.25;    //  31.250 kHz
+					FREQ = 31.25;    //  31.250 kHz; fbioz = 0.97625 kHz
 					clk_pd = 1.0/(FREQ * 1e3) * 1e9; // convert to ns
 					clk_on =  DUTY/100.0 * clk_pd;
 					clk_off = (100.0 - DUTY)/100.0 * clk_pd;

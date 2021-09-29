@@ -105,16 +105,43 @@
 					<output>AFE_TIA_Q
 						<evalType>point</evalType>
 					</output>
-					<output>AFE_MIX_I
+					<output>AFE_MIX_I_IF
 						<evalType>point</evalType>
 					</output>
-					<output>AFE_MIX_Q
+					<output>AFE_MIX_Q_IF
 						<evalType>point</evalType>
 					</output>
 					<output>AFE_TCA_I
 						<evalType>point</evalType>
 					</output>
+					<output>"/I5/IF_P"
+						<evalType>point</evalType>
+					</output>
+					<output>"/I5/IF_N"
+						<evalType>point</evalType>
+					</output>
 					<output>AFE_TCA_Q
+						<evalType>point</evalType>
+					</output>
+					<output>"/I5/I6/IoutP_1"
+						<evalType>point</evalType>
+					</output>
+					<output>"/I5/I6/IoutN_1"
+						<evalType>point</evalType>
+					</output>
+					<output>"/I5/I(/IoutP_2"
+						<evalType>point</evalType>
+					</output>
+					<output>"/I5/I8/IoutN_2"
+						<evalType>point</evalType>
+					</output>
+					<output>"/I5/I8/IoutP_2"
+						<evalType>point</evalType>
+					</output>
+					<output>AFE_MIX_I_BB
+						<evalType>point</evalType>
+					</output>
+					<output>AFE_MIX_Q_BB
 						<evalType>point</evalType>
 					</output>
 				</outputs>
@@ -122,7 +149,7 @@
 		</tests>
 		<vars>
 			<var>t_meas
-				<value>4.5m</value>
+				<value>9m</value>
 				<dependentTests>
 					<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 				</dependentTests>
@@ -132,7 +159,7 @@
 		<overwritehistoryname>Interactive.0</overwritehistoryname>
 		<plottingoptions>
 			<plottingoption>plottingmode
-				<value>Replace</value>
+				<value>New Win</value>
 			</plottingoption>
 			<plottingoption>plottype
 				<value>None</value>
@@ -352,7 +379,7 @@
 			<resultsisuserpath>1</resultsisuserpath>
 			<locked>1</locked>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.173
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.336
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -386,7 +413,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.173</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.336</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -458,16 +485,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -475,7 +529,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -485,7 +539,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -518,25 +572,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 19 16:36:17 2021</timestamp>
-			<uuid>{eb2ab28b-2a60-4c3f-b083-cdaad7049d21}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.173.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.173.rdb</simresults>
+			<timestamp>Mar 22 16:38:33 2021</timestamp>
+			<uuid>{4c6096d1-6465-456a-909a-479ec849d591}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.336.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.336.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_163617127</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.173</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.173</simdir>
+			<localpsfdir>/tmp/s2424_fernande_163833560</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.336</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.336</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.173.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.173.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.336.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.336.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.174
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.337
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -570,7 +624,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.174</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.337</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -642,16 +696,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -659,7 +740,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -669,7 +750,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -702,25 +783,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 19 16:57:44 2021</timestamp>
-			<uuid>{db8858f7-a581-4741-b99a-0a00c675d0c8}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.174.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.174.rdb</simresults>
+			<timestamp>Mar 22 16:42:03 2021</timestamp>
+			<uuid>{e60017f6-4b36-42ee-b5f1-d15adf32f7e0}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.337.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.337.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_165744517</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.174</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.174</simdir>
+			<localpsfdir>/tmp/s2424_fernande_164203281</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.337</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.337</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.174.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.174.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.337.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.337.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.175
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.338
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -754,7 +835,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.175</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.338</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -826,16 +907,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -843,7 +951,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -853,7 +961,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -886,25 +994,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 19 17:04:22 2021</timestamp>
-			<uuid>{a806c20e-d1ff-4d4f-99b0-1e20f8f6a819}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.175.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.175.rdb</simresults>
+			<timestamp>Mar 22 16:48:12 2021</timestamp>
+			<uuid>{0c092ca4-583b-4b21-833c-461be17c6c67}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.338.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.338.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_170422558</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.175</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.175</simdir>
+			<localpsfdir>/tmp/s2424_fernande_164812208</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.338</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.338</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.175.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.175.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.338.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.338.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.176
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.339
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -938,7 +1046,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.176</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.339</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1010,16 +1118,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -1027,7 +1162,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -1037,7 +1172,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -1070,25 +1205,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 19 17:15:07 2021</timestamp>
-			<uuid>{4e6c8c6f-cd99-447c-a3a7-d8db3cb3a2fc}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.176.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.176.rdb</simresults>
+			<timestamp>Mar 22 16:52:34 2021</timestamp>
+			<uuid>{cf5c1b08-cd3e-4e91-895d-584dd3a220d0}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.339.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.339.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_171507420</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.176</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.176</simdir>
+			<localpsfdir>/tmp/s2424_fernande_165234491</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.339</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.339</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.176.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.176.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.339.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.339.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.177
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.340
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -1122,7 +1257,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.177</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.340</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1194,16 +1329,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -1211,7 +1373,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -1221,7 +1383,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -1254,25 +1416,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 19 17:20:39 2021</timestamp>
-			<uuid>{9d8bba33-e521-4d3b-9968-43498d47838b}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.177.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.177.rdb</simresults>
+			<timestamp>Mar 22 17:03:09 2021</timestamp>
+			<uuid>{4037daac-f408-41eb-b805-aca81dc60601}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.340.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.340.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_172039735</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.177</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.177</simdir>
+			<localpsfdir>/tmp/s2424_fernande_170309262</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.340</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.340</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.177.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.177.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.340.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.340.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.178
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.341
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -1306,7 +1468,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.178</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.341</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1378,16 +1540,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -1395,7 +1584,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -1405,7 +1594,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -1438,25 +1627,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 19 17:27:26 2021</timestamp>
-			<uuid>{676a5b0d-9a48-4205-964d-242a2168f353}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.178.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.178.rdb</simresults>
+			<timestamp>Mar 22 17:04:59 2021</timestamp>
+			<uuid>{37cdb2cc-f737-4e87-a4a4-f3b4a8d05444}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.341.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.341.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_172726310</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.178</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.178</simdir>
+			<localpsfdir>/tmp/s2424_fernande_170459098</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.341</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.341</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.178.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.178.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.341.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.341.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.179
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.342
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -1490,7 +1679,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.179</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.342</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1562,16 +1751,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -1579,7 +1795,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -1589,7 +1805,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -1622,25 +1838,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 19 17:35:40 2021</timestamp>
-			<uuid>{b22e6d80-098e-4b87-a5ec-d1b7f7483a88}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.179.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.179.rdb</simresults>
+			<timestamp>Mar 22 17:24:40 2021</timestamp>
+			<uuid>{7327fc05-b3fc-4e20-8a7a-914644c55968}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.342.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.342.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_173540711</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.179</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.179</simdir>
+			<localpsfdir>/tmp/s2424_fernande_172440411</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.342</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.342</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.179.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.179.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.342.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.342.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.180
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.343
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -1674,7 +1890,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.180</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.343</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1746,16 +1962,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -1763,7 +2006,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -1773,7 +2016,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -1806,25 +2049,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 22 13:59:49 2021</timestamp>
-			<uuid>{db1a5b92-1c4e-4f69-b3aa-40028f40d41d}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.180.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.180.rdb</simresults>
+			<timestamp>Mar 22 17:32:32 2021</timestamp>
+			<uuid>{57fa6034-b183-42bf-9a63-13e7caa9f50d}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.343.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.343.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_135949898</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.180</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.180</simdir>
+			<localpsfdir>/tmp/s2424_fernande_173232776</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.343</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.343</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.180.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.180.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.343.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.343.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.181
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.344
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -1858,7 +2101,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.181</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.344</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -1930,16 +2173,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -1947,7 +2217,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -1957,7 +2227,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -1990,25 +2260,25 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 22 14:07:11 2021</timestamp>
-			<uuid>{55e608a9-6b00-44ec-b81f-95c5cd8000bb}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.181.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.181.rdb</simresults>
+			<timestamp>Mar 22 17:37:32 2021</timestamp>
+			<uuid>{23a9bb6c-6cae-43b7-bf59-51488ce15c88}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.344.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.344.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_140711147</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.181</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.181</simdir>
+			<localpsfdir>/tmp/s2424_fernande_173732817</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.344</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.344</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.181.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.181.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.344.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.344.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>
-		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.182
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.345
 			<checkpoint>
 				<corners>
 					<corner enabled="1">_default</corner>
@@ -2042,7 +2312,7 @@
 								<value>$AXL_SETUPDB_DIR/test_states</value>
 							</option>
 							<option>state
-								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.182</value>
+								<value>BioZ_EMG_Model:BioZ_TB:1_ams_state1_Interactive.345</value>
 							</option>
 						</tooloptions>
 						<origoptions>
@@ -2114,16 +2384,43 @@
 							<output>AFE_TIA_Q
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_I
+							<output>AFE_MIX_I_IF
 								<evalType>point</evalType>
 							</output>
-							<output>AFE_MIX_Q
+							<output>AFE_MIX_Q_IF
 								<evalType>point</evalType>
 							</output>
 							<output>AFE_TCA_I
 								<evalType>point</evalType>
 							</output>
+							<output>"/I5/IF_P"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/IF_N"
+								<evalType>point</evalType>
+							</output>
 							<output>AFE_TCA_Q
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutP_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I6/IoutN_1"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I(/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutN_2"
+								<evalType>point</evalType>
+							</output>
+							<output>"/I5/I8/IoutP_2"
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_I_BB
+								<evalType>point</evalType>
+							</output>
+							<output>AFE_MIX_Q_BB
 								<evalType>point</evalType>
 							</output>
 						</outputs>
@@ -2131,7 +2428,7 @@
 				</tests>
 				<vars>
 					<var>t_meas
-						<value>4.5m</value>
+						<value>9m</value>
 						<dependentTests>
 							<dependentTest omitted="0">BioZ_EMG_Model:BioZ_TB:1</dependentTest>
 						</dependentTests>
@@ -2141,7 +2438,7 @@
 				<overwritehistoryname>Interactive.0</overwritehistoryname>
 				<plottingoptions>
 					<plottingoption>plottingmode
-						<value>Replace</value>
+						<value>New Win</value>
 					</plottingoption>
 					<plottingoption>plottype
 						<value>None</value>
@@ -2174,21 +2471,21 @@
 				</distributeoptions>
 				<sortVariableValues>0</sortVariableValues>
 			</checkpoint>
-			<timestamp>Feb 22 14:10:30 2021</timestamp>
-			<uuid>{4a11b986-504d-4bde-9efe-ea82cf06a226}</uuid>
-			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.182.rdb</resultsname>
-			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.182.rdb</simresults>
+			<timestamp>Apr 6 10:42:55 2021</timestamp>
+			<uuid>{151f5c7d-3781-488e-ad05-6e76dfc6f9b5}</uuid>
+			<resultsname>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.345.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.345.rdb</simresults>
 			<rawdatadelstrategy>SaveAll
 				<simdatasavemode>All</simdatasavemode>
 			</rawdatadelstrategy>
 			<netlistdelstrategy>SaveAll</netlistdelstrategy>
 			<uselocalpsfdir>false</uselocalpsfdir>
-			<localpsfdir>/tmp/s2424_fernande_141031005</localpsfdir>
-			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.182</psfdir>
-			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.182</simdir>
+			<localpsfdir>/tmp/s2424_fernande_104255713</localpsfdir>
+			<psfdir>/home/fernande/cadence/workingdir/Sim/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.345</psfdir>
+			<simdir>$AXL_PROJECT_DIR/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.345</simdir>
 			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
-			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.182.log</runlog>
-			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.182.log</runlogfile>
+			<runlog>/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TB/adexl/results/data/Interactive.345.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.345.log</runlogfile>
 			<schematicpoint></schematicpoint>
 			<test>all</test>
 		</historyentry>

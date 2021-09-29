@@ -1,0 +1,49 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Thu Sep  2 14:32:00 2021 
+Best design point: 1
+Design specs: 
+	BioZ_EMG_Model:BioZ_AFE_DTBPSDM_CRFB_N-path_v3_TB:1	corner	Nominal - 
+	comp		Error	No
+Design parameters: 
+	t_trans		263m
+	pi		3.142
+	Voh		1.8
+	vcm		900m
+	vpk		800m
+	fs		62.5K
+	f0		15.62K
+	fB		122.1
+	a1		197.3m
+	a2		143.5m
+	b1		197.3m
+	c1		186.9m
+	c2		2.85
+	Cf		35p
+	Ch		2.333p
+	Av1_dB		80
+	Av2_dB		60
+	Av1		10K
+	Av2		1K
+	BW1		62.5K
+	BW2		62.5K
+	GBW1		625M
+	GBW2		62.5M
+	SR1		2*pi*GBW1*Voh
+	SR2		2*pi*GBW2*Voh
+	tr		20n
+	tf		20n
+	Rdc		300
+	Rac		100
+	Ron		1
+	Roff		1G
+	Voffp_comp		0
+	Voffn_comp		0
+	tdelay_comp		0
+	BW		62.5K
+
+Interactive.876
+Number of points completed: 1
+Number of simulation errors: 1
+Interactive.876 completed. 
+Current time: Thu Sep  2 14:38:31 2021 

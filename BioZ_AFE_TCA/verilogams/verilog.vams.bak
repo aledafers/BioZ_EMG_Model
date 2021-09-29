@@ -27,7 +27,7 @@ parameter real vcm = 0.9; //Common mode voltage
 parameter real Av = 20000; //DC voltage Gain 
 parameter real I_bias_CMFB = 0.5u; //Bias current
 parameter real GM0 = 6.66666u; //Transconductance Gain
-parameter real ip3 = -1;// 3rd order intercept point in dBm
+parameter real ip3 = 20;// 3rd order intercept point in dBm
 
 parameter real RS = 10; //Source Resistance
 parameter real CS = 3e-7; //Source Capacitance

@@ -12,7 +12,7 @@ output StepNum,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,AD
 //parameter cycle = 1428; // 700 kHz
 parameter cycle = 4500000; // 4.5 ms
 
-parameter [3:0] freq_selection = 4'b1010;
+parameter [3:0] freq_selection = 4'b1100;
 parameter ADC_clk_cycle = 14; // ADC takes 15 clock cycles to convert
 
 reg StepNum,CountEnable,Resetn,Clk_En,G_CTRL_TCA_AFE,G_CTRL_TIA_AFE,ADC_En,ADC_Start,Dir;

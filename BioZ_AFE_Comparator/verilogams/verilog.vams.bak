@@ -1,0 +1,69 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_Comparator" "verilogams"
+
+`timescale 1ns/1ps
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_Comparator ( outp, outn, clk, bias_in, vdda, vddd, vssa, vssd, vsub, in1, in2 );
+
+  output outp;  
+  output outn;
+  input bias_in;
+  inout vdda;
+  inout vddd;
+  inout vssa;
+  inout vssd;
+  inout vsub;
+  input in1;
+  input in2;
+
+logic clk;
+//logic outn_aux, outp_aux, outn, outp;
+electrical vdda, vddd, vssa, vssd, vsub, in1, in2;
+reg outp, outn, outp_aux, outn_aux;
+
+parameter real tdel = 0 from [0:inf); //in ns
+parameter real Voffp = 0;
+parameter real Voffn = 0;
+
+
+//always @(negedge clk) begin
+//	#1	
+//	outn = 0;
+// 	outp = 0;
+//end
+initial begin
+	outn_aux <= 1;
+	outp_aux <= 0;
+end
+
+always @(negedge clk) begin
+	
+	outn <= outn_aux;
+	outp <= outp_aux;
+	// metastability model
+	if ((V(in1) - V(in2) <= Voffp) && (V(in2) - V(in1) <= Voffn)) begin
+		if ($random > 0) begin
+			#tdel
+			outn_aux <= 0;
+			outp_aux <= 1;
+		end
+		else begin
+			#tdel
+			outn_aux <= 1;
+			outp_aux <= 0;
+		end
+	end
+	// delayed comparator
+	else if (V(in1) - V(in2) > Voffp) begin
+		#tdel	
+		outn_aux <= 0;
+		outp_aux <= 1;
+	end	
+	else if (V(in2) - V(in1) > Voffn) begin
+		#tdel	
+		outn_aux <= 1;
+		outp_aux <= 0;
+	end
+end 
+endmodule

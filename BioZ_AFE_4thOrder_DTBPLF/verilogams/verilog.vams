@@ -1,0 +1,83 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_Loop_Filter" "verilogams"
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_4thOrder_DTBPLF (in, out, in_sampled, int1_in, int2_in, int3_in, int4_in, int1_out, int2_out, int3_out, int4_out, dac1, dac2, dac3, dac4, clk, bias_in, vdda, vssa, vsub);
+
+input in;
+input dac1;
+input dac2;
+input dac3;
+input dac4;
+input clk;
+input bias_in;
+input vdda;
+input vssa;
+input vsub;
+output out;
+output in_sampled;
+output int1_in;
+output int2_in;
+output int3_in;
+output int4_in;
+output int1_out;
+output int2_out;
+output int3_out;
+output int4_out;
+
+logic clk;
+
+electrical in,out;
+electrical dac1,dac2,dac3,dac4;
+electrical bias_in, vdda, vssa, vsub;
+
+real Vin_sampled = 0;
+real int1_out_aux, int2_out_aux, int3_out_aux, int4_out_aux;
+electrical in_sampled;
+electrical int1_in,ideal_int1_out,int1_out;
+electrical int2_in,ideal_int2_out,int2_out;
+electrical int3_in,ideal_int3_out,int3_out;
+electrical int4_in,ideal_int4_out,int4_out;
+
+parameter real fs = 62.5k;
+parameter real f0 = 0.25*fs;
+parameter real w0 = 2*`M_PI*f0;
+parameter real ws = 2*`M_PI*fs;
+
+parameter real a1 = -0.154076274987214;
+parameter real a2 = -0.00556510869165280;
+parameter real a3 = -0.133498084066957;
+parameter real a4 = 0.151739177740145;
+parameter real g1 = 1.57575318270728;
+parameter real g2 = 1.75333964254637;
+parameter real b1 = 0.158505644069267;
+parameter real b2 = 0;
+parameter real b3 = 0;
+parameter real b4 = 0;
+parameter real b5 = 0;
+parameter real c1 = 1.27373065843891;
+parameter real c2 = 0.169961186262885;
+parameter real c3 = 1.13663936677936;
+parameter real c4 = 2.69534691939857;
+
+always @(posedge clk) begin
+	Vin_sampled = V(in);
+end
+
+analog begin
+	V(in_sampled) <+ Vin_sampled;
+	V(int1_in) <+ b1*Vin_sampled - a1*V(dac1) - g1*V(int2_out);
+	V(int2_in) <+ b2*Vin_sampled - a2*V(dac2) + c1*V(int1_out);
+	V(int1_out) <+ zi_nd(V(int1_in),{1},{1,-1},1/fs);
+	V(int2_out) <+ zi_nd(V(int2_in),{0,1},{1,-1},1/fs);
+
+	V(int3_in) <+ b3*Vin_sampled - a3*V(dac3) - g2*V(int4_out) + c2*V(int2_out);
+	V(int4_in) <+ b4*Vin_sampled - a4*V(dac4) + c3*V(int3_out);
+	V(int3_out) <+ zi_nd(V(int3_in),{1},{1,-1},1/fs);
+	V(int4_out) <+ zi_nd(V(int4_in),{0,1},{1,-1},1/fs);
+
+	V(out) <+ b5*Vin_sampled + c4*V(int4_out);
+
+end
+endmodule

@@ -26,7 +26,7 @@ initial begin
 end 
 
 always begin
-	#(cycle) Fsel = Fsel - 1;
+//	#(cycle) Fsel = Fsel - 1;
 //	#(1e6/1e3) clk <= ~clk;
 //	case (Fsel)
 		//4'b1010: #(1e6/0.9765625) Fsel = Fsel - 1;

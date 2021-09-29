@@ -39,7 +39,7 @@ initial begin
 	Dir = 1;
 	Row = 2'b00;
 	Col = 2'b00;
-	SenseMode = 3'b001;
+	SenseMode = 3'b000;
 
 	#200 Resetn = 0; Clk_En = 0; ADC_En = 0;
 	#400 Resetn = 1; Clk_En = 1; ADC_En = 1;

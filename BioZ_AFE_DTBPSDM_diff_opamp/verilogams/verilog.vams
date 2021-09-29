@@ -1,0 +1,107 @@
+//Verilog-AMS HDL for "BioZ_EMG_Model", "BioZ_AFE_DTBPSDM_diff_opamp" "verilogams"
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module BioZ_AFE_DTBPSDM_diff_opamp ( voutn, voutp, vinn, vinp, bias_in, bias_CMFB, vdda, vssa, vsub );
+
+input  vinp, vinn; //input signals
+output voutp, voutn; //output signals
+input  vsub, vdda, vssa; //power supply
+input bias_in, bias_CMFB; //bias currents
+
+electrical voutn, voutp, vinn, vinp, vinn_n, vinp_n, p, n, vssa;
+
+branch(p,vssa) curp, resp, capp, limp;
+branch(n,vssa) curn, resn, capn, limn;
+
+//parameter real fc = 312.5k from (0:1M];
+//parameter real vcm = 0.9 ;
+//parameter real Av = 100; //DC voltage Gain 
+//parameter real ip3 = 20;// 3rd order intercept point in dBm
+
+parameter real Av = 1M; //DC gain of amplifier
+parameter real Vio = 0; //input offset
+parameter real Voh = 1.8; //Max output high voltage
+parameter real Vol = 0; //Min output low voltage
+parameter real Rout_ac = 50; // AC Output resistance
+//parameter real fs = 62.5k; //SDM sampling frequency
+//parameter real GBW = 5*fs; //Gain-bandwidth product
+parameter real BW = 62.5k; //Gain-bandwidth product
+parameter real wp2 = 900k;
+parameter real wz  =60M;
+parameter real SR = `M_TWO_PI*Av*BW*Voh; //Slew rate
+//parameter real Rdc = 300; //Output resistance DC
+//parameter real Rac = 100; //Output resistance AC
+parameter real Vcm = 0.9 ;
+
+//real Ro, Co;
+real Isat, Vdif, Vin, Voutmax, Vinmax, Vout;
+
+`define fclip(V,isat,dV) isat*exp(4.6*(V)/dV) // define a parameterized expression
+
+analog function real ftanh; // define a tanh function for output smoothing
+	input x,L,H;
+	real x,L,H,dv;
+	begin
+		dv=(H-L) / 2;
+		ftanh = L+ dv*(1+ tanh(x/dv));
+	end
+endfunction
+
+analog begin
+
+	//@(initial_step) begin // to establish initial fixed constants
+	//	Ro = Rdc-Rac;
+	//	Co = 1/(`M_TWO_PI*Ro*BW);
+	//	Isat = Co*SR;
+	//end
+	
+	//Noise Model
+	V(vinp_n,vinn_n) <+ V(vinp,vinn) + white_noise(2.5u,"thermal");
+
+	Vin = V(vinp_n,vinn_n); // input voltage
+	Vdif = Av*(Vin-Vio); // output voltage gain expression
+
+	// positive node
+	//V(p,vssa) <+ slew(laplace_zp(ftanh(Vdif/2,Vol,Voh),{-`M_TWO_PI*wz,0},{-`M_TWO_PI*BW,0,-`M_TWO_PI*wp2,0}),SR,-SR); // pass current using tanh smoothing function
+	V(p,vssa) <+ slew(laplace_np(ftanh(Vdif/2,Vol,Voh),{1},{-`M_TWO_PI*BW,0}),SR,-SR); // pass current using tanh smoothing function
+	I(voutp,p) <+ V(voutp,p)/Rout_ac; //Rout_ac = 50;
+	// negative node
+	//V(n,vssa) <+ slew(laplace_zp(ftanh(-Vdif/2,Vol,Voh),{-`M_TWO_PI*wz,0},{-`M_TWO_PI*BW,0,-`M_TWO_PI*wp2,0}),SR,-SR); // pass current using tanh smoothing function
+	V(n,vssa) <+ slew(laplace_np(ftanh(-Vdif/2,Vol,Voh),{1},{-`M_TWO_PI*BW,0}),SR,-SR); // pass current using tanh smoothing function
+	I(voutn,n) <+ V(voutn,n)/Rout_ac; //Rout_ac = 50;
+
+//// OLDER IMPLEMENTATION ////
+	// positive node
+//	I(curp) <+ ftanh((-Vdif/2)/Ro,Isat,-Isat); // pass current using tanh smoothing function
+//	I(resp) <+ (V(resp)-(Voh+Vol)/2)/Ro; // pass output current
+//	I(capp) <+ ddt(Co*V(capp)); // pass current effects from output capacitance
+//	I(limp) <+ `fclip(V(limp)-Voh,Isat,0.1) - `fclip(Vol-V(limp),Isat,0.1); // limit output swing
+//	I(voutp,p) <+ -V(voutp,p)/Rac; // add current from output impedance
+//	V(voutp,vssa) <+ V(voutp,p) + Vcm; // add common mode voltage
+
+	// negative node
+//	I(curn) <+ ftanh((Vdif/2)/Ro,Isat,-Isat); // pass current using tanh smoothing function
+//	I(resn) <+ (V(resn)-(Voh+Vol)/2)/Ro; // pass output current
+//	I(capn) <+ ddt(Co*V(capn)); // pass current effects from output capacitance
+//	I(limn) <+ `fclip(V(limn)-Voh,Isat,0.1) - `fclip(Vol-V(limn),Isat,0.1); // limit output swing
+//	I(voutn,n) <+ -V(voutn,n)/Rac; // add current from output impedance
+//	V(voutn,vssa) <+ V(voutn,n) + Vcm; // add common mode voltage
+
+//	V(vinp_n,vinn_n) <+ V(vinp,vinn) + noise_table("/home/fernande/cadence/workingdir/BioZ_EMG_Model/BioZ_TCA_noise_table", "TCA_noise");
+//	V(vinp_n,vinn_n) <+ V(vinp,vinn);
+
+	//Assign the input voltage to the variable, Vin
+//	Vin = V(vinp_n,vinn_n);
+	
+	//Finite Gain
+//	vdif = Av*Vin;
+
+	//Finite Bandwidth - Set the common mode	
+//	V(voutp,vssa) <+ laplace_np(vdif/2 + vcm,{1},{-`M_TWO_PI*fc,0});
+//	V(voutn,vssa) <+ laplace_np(-vdif/2 + vcm,{1},{-`M_TWO_PI*fc,0});
+
+end
+
+endmodule
